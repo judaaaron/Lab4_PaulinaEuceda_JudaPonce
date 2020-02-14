@@ -196,7 +196,25 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                         resp = 'n';
                                         break;
                                     case 2:
-                                        System.out.println("");
+                                        System.out.print("Ingrese el nivel de musculatura [1-15]: ");
+                                        nivelMusculatura = lea.nextInt();
+                                        while(nivelMusculatura<1 || nivelMusculatura>15){
+                                            System.out.println("No esta dentro del rango");
+                                            System.out.print("Ingrese el nivel de musculatura [1-15]: ");
+                                            nivelMusculatura = lea.nextInt();
+                                        }
+                                        
+                                        
+                                        System.out.print("Ingrese el nivel de reflejos [1-10]: ");
+                                        nivelReflejo = lea.nextInt();
+                                        while(nivelReflejo<1 || nivelReflejo>15){
+                                            System.out.println("No esta dentro del rango");
+                                            System.out.print("Ingrese el nivel de reflejos [1-10]: ");
+                                            nivelReflejo = lea.nextInt();
+                                        }
+                                        
+                                        
+                                        
                                         break;
                                     default:
                                         System.out.println("Opcion incorrecta");
