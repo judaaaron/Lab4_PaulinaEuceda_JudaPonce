@@ -4,26 +4,17 @@ import java.util.ArrayList;
 
 public class Equipo {
 
-    private String nameTeam, casa;
+    private String casa;
     private int cantGanados, cantPerdidos;
-    private ArrayList <Jugadores> players= new ArrayList();
+    private ArrayList<Jugadores> players = new ArrayList();
 
     public Equipo() {
     }
 
-    public Equipo(String nameTeam, String casa, int cantGanados, int cantPerdidos) {
-        this.nameTeam = nameTeam;
+    public Equipo(String casa, int cantGanados, int cantPerdidos) {
         this.casa = casa;
         this.cantGanados = cantGanados;
         this.cantPerdidos = cantPerdidos;
-    }
-
-    public String getNameTeam() {
-        return nameTeam;
-    }
-
-    public void setNameTeam(String nameTeam) {
-        this.nameTeam = nameTeam;
     }
 
     public String getCasa() {
@@ -60,11 +51,7 @@ public class Equipo {
 
     @Override
     public String toString() {
-        return "Equipo{" + "nameTeam=" + nameTeam + ", casa=" + casa + ", cantGanados=" + cantGanados + ", cantPerdidos=" + cantPerdidos + ", players=" + players + '}';
+        return "Equipo{" + " casa=" + casa + ", cantGanados=" + cantGanados + ", cantPerdidos=" + cantPerdidos + ", players=" + players + '}';
     }
-    
-    
-    
-    
-    
+
 }
