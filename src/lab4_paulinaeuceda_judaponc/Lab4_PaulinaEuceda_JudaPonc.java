@@ -258,6 +258,7 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                             System.out.print("Ingrese el nivel de reflejos [1-10]: ");
                                             nivelReflejo = lea.nextInt();
                                         }
+                                        System.out.println("");
                                         
                                         
                                         
