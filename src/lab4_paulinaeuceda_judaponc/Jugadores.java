@@ -8,11 +8,13 @@ public abstract class Jugadores {
     public Jugadores() {
     }
 
-    public Jugadores(String nombre, String anio, String casa, int numUniforme) {
+    public Jugadores(String nombre, String anio, String casa, int numUniforme) throws Exception{
         this.nombre = nombre;
         this.anio = anio;
         this.casa = casa;
         this.numUniforme = numUniforme;
+      
+        
     }
 
     public String getNombre() {

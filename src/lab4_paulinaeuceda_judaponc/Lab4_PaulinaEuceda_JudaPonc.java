@@ -29,8 +29,7 @@ public class Lab4_PaulinaEuceda_JudaPonc {
         equipos.get(1).getPlayers().add(new Cazador(123, 7, "Yuda", "Septimo", "Gryffindor", 14));
         equipos.get(1).getPlayers().add(new Cazador(126, 9, "Diego", "Cuarto", "Gryffindor", 16));
         equipos.get(1).getPlayers().add(new Buscador(120, "Vargas", "Quinto", "Gryffindor", 19));
-        
-        
+
         char salida = 's';
         boolean equipoCreado = false;
         while (salida == 's') {
@@ -41,11 +40,12 @@ public class Lab4_PaulinaEuceda_JudaPonc {
             System.out.print("Ingrese la opcion que desea: ");
             int opcionMenu1 = lea.nextInt();
 
-            String casa = "";
+            String Teamcasa = "";
             int partidosGanados = 0, partidosPerdidos = 0, promedioAgilidad, promedioVelocidad, promedioFuerza;
 
-            String nombre, año="";
-            int numUniforme=0, peso, nivelMusculatura, nivelReflejo;
+            String nombre, año = "";
+            String casaPlay = "";
+            int numUniforme = 0, peso, nivelMusculatura, nivelReflejo;
 
             switch (opcionMenu1) {
                 case 1:
@@ -66,16 +66,16 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                             int casaEleccion = lea.nextInt();
                             switch (casaEleccion) {
                                 case 1:
-                                    casa = "Gryffindor";
+                                    Teamcasa = "Gryffindor";
                                     break;
                                 case 2:
-                                    casa = "Slytherin";
+                                    Teamcasa = "Slytherin";
                                     break;
                                 case 3:
-                                    casa = "Ravenclaw";
+                                    Teamcasa = "Ravenclaw";
                                     break;
                                 case 4:
-                                    casa = "Hufflepuff";
+                                    Teamcasa = "Hufflepuff";
                                     break;
                                 default:
                                     System.out.println("Opcion incorrecta");
@@ -83,7 +83,7 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                             }//fin menu casa
 
                             ArrayList<Jugadores> listaJugador = new ArrayList();
-                            equipos.add(new Equipo(casa, partidosGanados, partidosPerdidos));
+                            equipos.add(new Equipo(Teamcasa, partidosGanados, partidosPerdidos));
                             System.out.println("Equipo creado");
                             //despues de aqui se crea el equipo
                             equipoCreado = true;
@@ -288,6 +288,7 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                             resp = 's';
 
                             while (resp == 's') {
+
                                 System.out.println("1) Gryffindor");
                                 System.out.println("2) Slytherin");
                                 System.out.println("3) Ravenclaw");
@@ -296,25 +297,32 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                 int casaEleccion = lea.nextInt();
                                 switch (casaEleccion) {
                                     case 1:
-                                        casa = "Gryffindor";
+                                        casaPlay = "Gryffindor";
                                         resp = 'n';
                                         break;
                                     case 2:
-                                        casa = "Slytherin";
+                                        casaPlay = "Slytherin";
                                         resp = 'n';
                                         break;
                                     case 3:
-                                        casa = "Ravenclaw";
+                                        casaPlay = "Ravenclaw";
                                         resp = 'n';
                                         break;
                                     case 4:
-                                        casa = "Hufflepuff";
+                                        casaPlay = "Hufflepuff";
                                         resp = 'n';
                                         break;
                                     default:
                                         System.out.println("Opcion incorrecta");
                                         break;
                                 }//fin menu casa
+
+                                try {
+                                    Exceptions exi ;
+                                    exi = new Exceptions(Teamcasa, casaPlay);
+                                } catch (Exception e) {
+                                    System.out.println(e);
+                                }
                             }
 
                             System.out.print("Ingrese el numero de uniforme: ");
@@ -332,12 +340,12 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                     case 1:
                                         System.out.print("Ingrese el nivel de reflejos [1-10]: ");
                                         nivelReflejo = lea.nextInt();
-                                        while(nivelReflejo<1 || nivelReflejo>15){
+                                        while (nivelReflejo < 1 || nivelReflejo > 15) {
                                             System.out.println("No esta dentro del rango");
                                             System.out.print("Ingrese el nivel de reflejos [1-10]: ");
                                             nivelReflejo = lea.nextInt();
                                         }
-                                        jugadores.add(new Guardian(nivelReflejo, nombre, año, casa, numUniforme));
+                                        jugadores.add(new Guardian(nivelReflejo, nombre, año, casaPlay, numUniforme));
                                         resp = 'n';
                                         break;
                                     case 2:
@@ -351,14 +359,14 @@ public class Lab4_PaulinaEuceda_JudaPonc {
 
                                         System.out.print("Ingrese el nivel de reflejos [1-10]: ");
                                         nivelReflejo = lea.nextInt();
-                                        while (nivelReflejo < 1 || nivelReflejo > 15) {
+                                        while (nivelReflejo < 1 || nivelReflejo > 10) {
                                             System.out.println("No esta dentro del rango");
                                             System.out.print("Ingrese el nivel de reflejos [1-10]: ");
                                             nivelReflejo = lea.nextInt();
                                         }
-                                        jugadores.add(new golpeador(nivelMusculatura, nivelReflejo, nombre, año, casa, numUniforme));
-                                        resp ='n';                                     
-                                        
+                                        jugadores.add(new golpeador(nivelMusculatura, nivelReflejo, nombre, año, casaPlay, numUniforme));
+                                        resp = 'n';
+
                                         System.out.println("Jugador creado");
                                         resp = 'n';
 
@@ -374,16 +382,16 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                             System.out.print("Ingrese el nivel de reflejos [1-10]: ");
                                             nivelReflejo = lea.nextInt();
                                         }
-                                        jugadores.add(new Cazador(peso, nivelReflejo, nombre, año, casa, numUniforme));
-                                        resp ='n';
+                                        jugadores.add(new Cazador(peso, nivelReflejo, nombre, año, casaPlay, numUniforme));
                                         resp = 'n';
+                                   
                                         break;
-                                        
+
                                     case 4:
                                         System.out.print("Ingrese el peso: ");
                                         peso = lea.nextInt();
-                                        jugadores.add(new Buscador(peso, nombre, año, casa, numUniforme));
-                                        resp='n';
+                                        jugadores.add(new Buscador(peso, nombre, año, casaPlay, numUniforme));
+                                        resp = 'n';
                                         break;
                                     default:
                                         System.out.println("Opcion incorrecta");
@@ -436,7 +444,7 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                         System.out.print(" Ingrese un nuevo nombre: ");
                                         String newNombre = lea.next();
                                         jugadores.get(position).setNombre(newNombre);
-                                        System.out.println(" Nombre del jugadores ha sido modificado con exito");
+                                        System.out.println(" Nombre del jugador ha sido modificado con exito");
                                         System.out.println();
                                         break;
 
@@ -619,13 +627,12 @@ public class Lab4_PaulinaEuceda_JudaPonc {
             }//fin switch1
         }//fin while salida
     }//fin main
-    
-    static public void Simular(){
+
+    static public void Simular() {
         for (int i = 0; i < equipos.size(); i++) {
-            System.out.println(i+") "+equipos.get(i));
+            System.out.println(i + ") " + equipos.get(i));
         }
-        
-        
+
     }
 
 }
