@@ -86,6 +86,7 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                 salidass += " [" + equipos.indexOf(o) + "] " + o + "\n";
 
                             }
+                            System.out.println();
                             System.out.println(salidass);
                             System.out.println(" Seleccione la posicion para eliminar el equipo");
                             int posicion = lea.nextInt();
