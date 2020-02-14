@@ -13,7 +13,26 @@ public class Lab4_PaulinaEuceda_JudaPonc {
     static ArrayList<Equipo> equipos = new ArrayList();
 
     public static void main(String[] args) {
+        equipos.add(new Equipo("Gryffindor", 0, 0));
+        equipos.add(new Equipo("Slytherin", 0, 0));
+        equipos.get(0).getPlayers().add(new Guardian(5, "Marc", "Tercer", "Gryffindor", 12));
+        equipos.get(0).getPlayers().add(new golpeador(14, 6, "Pablo", "Quinto", "Gryffindor", 2));
+        equipos.get(0).getPlayers().add(new golpeador(6, 3, "Marcos", "Segundo", "Gryffindor", 6));
+        equipos.get(0).getPlayers().add(new Cazador(188, 14, "Sebas", "Sexto", "Gryffindor", 11));
+        equipos.get(0).getPlayers().add(new Cazador(123, 7, "Yuda", "Septimo", "Gryffindor", 14));
+        equipos.get(0).getPlayers().add(new Cazador(126, 9, "Diego", "Cuarto", "Gryffindor", 16));
+        equipos.get(0).getPlayers().add(new Buscador(120, "Vargas", "Quinto", "Gryffindor", 19));
+        equipos.get(1).getPlayers().add(new Guardian(5, "Marc", "Tercer", "Gryffindor", 12));
+        equipos.get(1).getPlayers().add(new golpeador(14, 6, "Pablo", "Quinto", "Gryffindor", 2));
+        equipos.get(1).getPlayers().add(new golpeador(6, 3, "Marcos", "Segundo", "Gryffindor", 6));
+        equipos.get(1).getPlayers().add(new Cazador(188, 14, "Sebas", "Sexto", "Gryffindor", 11));
+        equipos.get(1).getPlayers().add(new Cazador(123, 7, "Yuda", "Septimo", "Gryffindor", 14));
+        equipos.get(1).getPlayers().add(new Cazador(126, 9, "Diego", "Cuarto", "Gryffindor", 16));
+        equipos.get(1).getPlayers().add(new Buscador(120, "Vargas", "Quinto", "Gryffindor", 19));
+        
+        
         char salida = 's';
+        boolean equipoCreado = false;
         while (salida == 's') {
             System.out.println("1) Equipo");
             System.out.println("2) Jugadores");
@@ -24,10 +43,9 @@ public class Lab4_PaulinaEuceda_JudaPonc {
 
             String casa = "";
             int partidosGanados = 0, partidosPerdidos = 0, promedioAgilidad, promedioVelocidad, promedioFuerza;
-            boolean equipoCreado = false;
 
-            String nombre, año;
-            int numUniforme, peso, nivelMusculatura, nivelReflejo;
+            String nombre, año="";
+            int numUniforme=0, peso, nivelMusculatura, nivelReflejo;
 
             switch (opcionMenu1) {
                 case 1:
@@ -66,7 +84,7 @@ public class Lab4_PaulinaEuceda_JudaPonc {
 
                             ArrayList<Jugadores> listaJugador = new ArrayList();
                             equipos.add(new Equipo(casa, partidosGanados, partidosPerdidos));
-
+                            System.out.println("Equipo creado");
                             //despues de aqui se crea el equipo
                             equipoCreado = true;
                             break;
@@ -233,7 +251,7 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                             }
 
                             System.out.print("Ingrese el numero de uniforme: ");
-                            año = lea.next();
+                            numUniforme = lea.nextInt();
 
                             resp = 's';
                             while (resp == 's') {
@@ -245,8 +263,14 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                 int jugadorEleccion = lea.nextInt();
                                 switch (jugadorEleccion) {
                                     case 1:
-                                        System.out.print("Ingrese el peso: ");
-                                        peso = lea.nextInt();
+                                        System.out.print("Ingrese el nivel de reflejos [1-10]: ");
+                                        nivelReflejo = lea.nextInt();
+                                        while(nivelReflejo<1 || nivelReflejo>15){
+                                            System.out.println("No esta dentro del rango");
+                                            System.out.print("Ingrese el nivel de reflejos [1-10]: ");
+                                            nivelReflejo = lea.nextInt();
+                                        }
+                                        jugadores.add(new Guardian(nivelReflejo, nombre, año, casa, numUniforme));
                                         resp = 'n';
                                         break;
                                     case 2:
@@ -266,8 +290,10 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                             System.out.print("Ingrese el nivel de reflejos [1-10]: ");
                                             nivelReflejo = lea.nextInt();
                                         }
+                                        jugadores.add(new golpeador(nivelMusculatura, nivelReflejo, nombre, año, casa, numUniforme));
                                         resp ='n';                                     
                                         
+                                        System.out.println("Jugador creado");
                                         break;
                                     case 3:
                                         System.out.print("Ingrese el peso: ");
@@ -280,7 +306,15 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                             System.out.print("Ingrese el nivel de reflejos [1-10]: ");
                                             nivelReflejo = lea.nextInt();
                                         }
+                                        jugadores.add(new Cazador(peso, nivelReflejo, nombre, año, casa, numUniforme));
                                         resp ='n';
+                                        break;
+                                        
+                                    case 4:
+                                        System.out.print("Ingrese el peso: ");
+                                        peso = lea.nextInt();
+                                        jugadores.add(new Buscador(peso, nombre, año, casa, numUniforme));
+                                        resp='n';
                                         break;
                                     default:
                                         System.out.println("Opcion incorrecta");
@@ -348,6 +382,7 @@ public class Lab4_PaulinaEuceda_JudaPonc {
 
                     break;
                 case 3: //simulacion
+                    Simular();
                     break;
                 case 4: //salir
                     salida = 'n';
@@ -358,5 +393,13 @@ public class Lab4_PaulinaEuceda_JudaPonc {
             }//fin switch1
         }//fin while salida
     }//fin main
+    
+    static public void Simular(){
+        for (int i = 0; i < equipos.size(); i++) {
+            System.out.println(i+") "+equipos.get(i));
+        }
+        
+        
+    }
 
 }
