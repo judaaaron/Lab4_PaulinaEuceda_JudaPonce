@@ -10,6 +10,7 @@ public class Lab4_PaulinaEuceda_JudaPonc {
     static Random ran = new Random();
 
     static ArrayList<Jugadores> jugadores = new ArrayList();
+    static ArrayList<Equipo> equipos = new ArrayList();
 
     public static void main(String[] args) {
         char salida = 's';
@@ -21,7 +22,7 @@ public class Lab4_PaulinaEuceda_JudaPonc {
             System.out.print("Ingrese la opcion que desea: ");
             int opcionMenu1 = lea.nextInt();
 
-            String casa;
+            String casa="";
             int partidosGanados = 0, partidosPerdidos = 0, promedioAgilidad, promedioVelocidad, promedioFuerza;
             boolean equipoCreado = false;
 
@@ -62,7 +63,10 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                     System.out.println("Opcion incorrecta");
                                     break;
                             }//fin menu casa
-
+                            
+                            ArrayList<Jugadores> listaJugador = new ArrayList();
+                            equipos.add(new Equipo(casa, partidosGanados, partidosPerdidos));
+                            
                             //despues de aqui se crea el equipo
                             equipoCreado = true;
                             break;
