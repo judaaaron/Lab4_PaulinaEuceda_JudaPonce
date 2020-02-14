@@ -73,12 +73,20 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                         case 2://modificar equipo
                             break;
                         case 3://eliminar equipo
+                            
+                            if (equipos.isEmpty()) {
+                                System.out.println(" No hay equipos registrados hasta el momento");
+                                System.out.println();
+                                break;
+                                
+                            }
                             String salidass = "";
                             for (Object o : equipos) {
 
                                 salidass += " [" + equipos.indexOf(o) + "] " + o + "\n";
 
                             }
+                            System.out.println();
                             System.out.println(salidass);
                             System.out.println(" Seleccione la posicion para eliminar el equipo");
                             int posicion = lea.nextInt();
@@ -286,6 +294,12 @@ public class Lab4_PaulinaEuceda_JudaPonc {
 
                             break;
                         case 3://eliminar jugador
+                            if (jugadores.isEmpty()) {
+                                System.out.println(" No hay jugadores registrados hasta el momento");
+                                System.out.println();
+                                break;
+                                
+                            }
                             String salidass = "";
                             for (Object o : jugadores) {
 
