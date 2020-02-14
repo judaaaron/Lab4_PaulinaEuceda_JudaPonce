@@ -319,7 +319,7 @@ public class Lab4_PaulinaEuceda_JudaPonc {
 
                                 try {
                                     Exceptions exi ;
-                                    exi = new Exceptions(Teamcasa, casaPlay);
+                                    exi = new Exceptions(Teamcasa, casaPlay); 
                                 } catch (Exception e) {
                                     System.out.println(e);
                                 }
