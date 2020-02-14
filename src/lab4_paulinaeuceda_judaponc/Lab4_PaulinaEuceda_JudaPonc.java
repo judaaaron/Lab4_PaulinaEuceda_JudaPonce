@@ -89,14 +89,81 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                             equipoCreado = true;
                             break;
                         case 2://modificar equipo
-                            break;
-                        case 3://eliminar equipo
-                            
+
                             if (equipos.isEmpty()) {
                                 System.out.println(" No hay equipos registrados hasta el momento");
                                 System.out.println();
                                 break;
-                                
+
+                            }
+                            String endi = "";
+                            for (Object o : equipos) {
+
+                                endi += " [" + equipos.indexOf(o) + "] " + o + "\n";
+
+                            }
+                            System.out.println();
+                            System.out.println(endi);
+                            System.out.print(" Seleccione la posicion para modificar la casa del equipo: ");
+                            int posi = lea.nextInt();
+                            boolean value = false;
+                            for (int i = 0; i < equipos.size(); i++) {
+                                if (posi == i) {
+                                    value = false;
+                                    break;
+                                } else {
+                                    value = true;
+                                }
+
+                            }
+
+                            if (value == false) {
+                                String newCasa = "";
+                                System.out.println(" Ingrese un nueva casa: ");
+                                System.out.println("1) Gryffindor");
+                                System.out.println("2) Slytherin");
+                                System.out.println("3) Ravenclaw");
+                                System.out.println("4) Hufflepuff");
+                                int opciones = lea.nextInt();
+                                switch (opciones) {
+                                    case 1:
+                                        newCasa = "Gryffindor";
+                                        break;
+
+                                    case 2:
+                                        newCasa = "Slytherin";
+                                        break;
+
+                                    case 3:
+                                        newCasa = "Ravenclaw";
+                                        break;
+
+                                    case 4:
+                                        newCasa = "Hufflepuff";
+                                        break;
+                                    default:
+                                        System.out.println(" Opcion incorrecta");
+                                        System.out.println("");
+                                }
+
+                                equipos.get(posi).setCasa(newCasa);
+                                System.out.println(" Casa del equipo ha modificada con exito");
+                                System.out.println();
+
+                            } else {
+                                System.out.println(" Error!!! Posicion seleccionada no existe");
+                                System.out.println();
+
+                            }
+
+                            break;
+                        case 3://eliminar equipo
+
+                            if (equipos.isEmpty()) {
+                                System.out.println(" No hay equipos registrados hasta el momento");
+                                System.out.println();
+                                break;
+
                             }
                             String salidass = "";
                             for (Object o : equipos) {
@@ -276,16 +343,15 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                     case 2:
                                         System.out.print("Ingrese el nivel de musculatura [1-15]: ");
                                         nivelMusculatura = lea.nextInt();
-                                        while(nivelMusculatura<1 || nivelMusculatura>15){
+                                        while (nivelMusculatura < 1 || nivelMusculatura > 15) {
                                             System.out.println("No esta dentro del rango");
                                             System.out.print("Ingrese el nivel de musculatura [1-15]: ");
                                             nivelMusculatura = lea.nextInt();
                                         }
-                                        
-                                        
+
                                         System.out.print("Ingrese el nivel de reflejos [1-10]: ");
                                         nivelReflejo = lea.nextInt();
-                                        while(nivelReflejo<1 || nivelReflejo>15){
+                                        while (nivelReflejo < 1 || nivelReflejo > 15) {
                                             System.out.println("No esta dentro del rango");
                                             System.out.print("Ingrese el nivel de reflejos [1-10]: ");
                                             nivelReflejo = lea.nextInt();
@@ -294,20 +360,23 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                         resp ='n';                                     
                                         
                                         System.out.println("Jugador creado");
+                                        resp = 'n';
+
                                         break;
                                     case 3:
                                         System.out.print("Ingrese el peso: ");
                                         peso = lea.nextInt();
-                                        
+
                                         System.out.print("Ingrese el nivel de reflejos [1-10]: ");
                                         nivelReflejo = lea.nextInt();
-                                        while(nivelReflejo<1 || nivelReflejo>15){
+                                        while (nivelReflejo < 1 || nivelReflejo > 15) {
                                             System.out.println("No esta dentro del rango");
                                             System.out.print("Ingrese el nivel de reflejos [1-10]: ");
                                             nivelReflejo = lea.nextInt();
                                         }
                                         jugadores.add(new Cazador(peso, nivelReflejo, nombre, año, casa, numUniforme));
                                         resp ='n';
+                                        resp = 'n';
                                         break;
                                         
                                     case 4:
@@ -326,13 +395,170 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                             break;
                         case 2://modificar jugador
 
+                            if (equipos.isEmpty()) {
+                                System.out.println(" No hay Jugadores registrados hasta el momento");
+                                System.out.println();
+                                break;
+
+                            }
+                            String endi = "";
+                            for (Object o : jugadores) {
+
+                                endi += " [" + jugadores.indexOf(o) + "] " + o + "\n";
+
+                            }
+                            System.out.println();
+                            System.out.println(endi);
+
+                            System.out.println(" Seleccione la posicion de la lista de jugadores");
+                            int position = lea.nextInt();
+                            boolean playerss = false;
+                            for (int i = 0; i < jugadores.size(); i++) {
+                                if (position == i) {
+                                    playerss = false;
+                                    break;
+                                } else {
+                                    playerss = true;
+                                }
+
+                            }
+
+                            if (playerss == false) {
+                                System.out.println(" Seleccione que desea modificar del jugadore");
+                                System.out.println(" 1. Nombre");
+                                System.out.println(" 2. Curso");
+                                System.out.println(" 3. Casa");
+                                System.out.println(" 4. Numero de unifome");
+                                int opi = lea.nextInt();
+                                switch (opi) {
+                                    case 1:
+                                        System.out.println(" Opcion modificar: Nombre del jugador");
+                                        System.out.print(" Ingrese un nuevo nombre: ");
+                                        String newNombre = lea.next();
+                                        jugadores.get(position).setNombre(newNombre);
+                                        System.out.println(" Nombre del jugadores ha sido modificado con exito");
+                                        System.out.println();
+                                        break;
+
+                                    case 2:
+                                        String newCurso = "";
+                                        System.out.println(" Opcion modificar: curso del jugador");
+                                        System.out.print(" seleccione un nuevo curso para ser modificado: ");
+                                        System.out.println("1) 1er");
+                                        System.out.println("2) 2do");
+                                        System.out.println("3) 3er");
+                                        System.out.println("4) 4to");
+                                        System.out.println("5) 5to");
+                                        System.out.println("6) 6to");
+                                        System.out.println("7) 7mo");
+                                        System.out.print("Ingrese la opcion que desea ");
+                                        int curso = lea.nextInt();
+                                        switch (curso) {
+                                            case 1:
+                                                newCurso = "Primero";
+                                                break;
+
+                                            case 2:
+                                                newCurso = "Segundo";
+
+                                                break;
+
+                                            case 3:
+                                                newCurso = "Tercero";
+
+                                                break;
+
+                                            case 4:
+                                                newCurso = "Cuarto";
+
+                                                break;
+
+                                            case 5:
+                                                newCurso = "Quinto";
+
+                                                break;
+
+                                            case 6:
+                                                newCurso = "Sexto";
+
+                                                break;
+
+                                            case 7:
+                                                newCurso = "Septimo";
+                                                break;
+                                            default:
+                                                System.out.println(" Opcion incorrecta");
+                                                System.out.println();
+                                        }
+
+                                        jugadores.get(position).setAnio(newCurso);
+                                        System.out.println(" Curso del jugador ha sido modicado con exito");
+                                        System.out.println();
+
+                                        break;
+
+                                    case 3:// modificar casa
+                                        String newCasa = "";
+                                        System.out.println(" Opcion modificar: Casa del jugador");
+                                        System.out.print(" seleccione un nueva casa para ser modificado: ");
+                                        System.out.println("1. Gryffindor");
+                                        System.out.println("2. Slytherin");
+                                        System.out.println("3. Ravenclaw");
+                                        System.out.println("4. Hufflepuff");
+                                        int house = lea.nextInt();
+                                        switch (house) {
+                                            case 1:
+                                                newCasa = "Gryffindor";
+                                                break;
+
+                                            case 2:
+                                                newCasa = "Slytherin";
+                                                break;
+
+                                            case 3:
+                                                newCasa = "RavenClaw";
+                                                break;
+
+                                            case 4:
+                                                newCasa = "Hufflepuff";
+                                                break;
+                                            default:
+                                                System.out.println(" Opcion incorrecta");
+                                                System.out.println();
+                                        }
+
+                                        jugadores.get(position).setCasa(newCasa);
+                                        System.out.println(" Casa del jugador ha sido modificada con exito");
+                                        System.out.println();
+
+                                        break;
+
+                                    case 4:// modificar numero 
+                                        System.out.println(" Opcion modificar: Numero de uniforme");
+                                        System.out.print(" Ingrese numero que desea");
+                                        int newNum = lea.nextInt();
+                                        jugadores.get(position).setNumUniforme(newNum);
+                                        System.out.println(" Numero de uniforme ha sido modificado con exito");
+                                        System.out.println();
+
+                                        break;
+                                    default:
+                                        System.out.println(" Opcion incorrecta");
+                                        System.out.println();
+                                }
+
+                            } else {
+                                System.out.println(" Error!! posicion seleccionada esta vacia");
+                                System.out.println();
+                            }
+
                             break;
                         case 3://eliminar jugador
                             if (jugadores.isEmpty()) {
                                 System.out.println(" No hay jugadores registrados hasta el momento");
                                 System.out.println();
                                 break;
-                                
+
                             }
                             String salidass = "";
                             for (Object o : jugadores) {
