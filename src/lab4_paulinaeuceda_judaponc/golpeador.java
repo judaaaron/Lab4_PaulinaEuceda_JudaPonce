@@ -42,7 +42,7 @@ public class golpeador extends Jugadores {
 
     @Override
     public String toString() {
-        return "golpeador{" + "musculatura=" + musculatura + ", reflejos=" + reflejos;
+        return super.toString()+ "golpeador{" + "musculatura=" + musculatura + ", reflejos=" + reflejos;
     }
 
     @Override
