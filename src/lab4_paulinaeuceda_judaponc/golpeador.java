@@ -12,7 +12,7 @@ public class golpeador extends Jugadores {
         super(nombre, anio, casa, numUniforme);
         this.musculatura = musculatura;
         this.reflejos = reflejos;
-        
+
     }
 
     public int getMusculatura() {
@@ -31,24 +31,39 @@ public class golpeador extends Jugadores {
         this.reflejos = reflejos;
     }
 
-    public int agilidad(){
-        
-        return reflejos+7;
+    public int agilidadGolpeador() {
+
+        return reflejos + 7;
     }
-    
-    public int fuerza() {
+
+    public int fuerzaGolpeador() {
         return (musculatura * 2) - 7;
     }
 
     @Override
     public String toString() {
-        return "golpeador{" + "musculatura=" + musculatura + ", reflejos=" + reflejos ;
+        return "golpeador{" + "musculatura=" + musculatura + ", reflejos=" + reflejos;
     }
-    
-    
 
     @Override
-    public int ataque() {
+    public boolean ataque(int sumaFuerzas) {
+        boolean exito = false;
+        int force = fuerzaGolpeador();
+        int agilidad = agilidadGolpeador();
+        if (fuerzaGolpeador() * 2 > sumaFuerzas) {
+            exito = true;
+            System.out.println(" Logró atacó con exito");
+            force += 10;
+        } else if (agilidadGolpeador() / 2 > sumaFuerzas) {
+            agilidad += 10;
+            System.out.println(" Logró defender con exito");
+            exito = false;
+        }
+        return exito;
+    }
+
+    @Override
+    public boolean trampa() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

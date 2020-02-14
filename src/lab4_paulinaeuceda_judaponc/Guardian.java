@@ -2,34 +2,49 @@ package lab4_paulinaeuceda_judaponc;
 
 public class Guardian extends Jugadores {
 
-    private double peso;
+    private int reflejo;
 
     public Guardian() {
         super();
     }
 
-    public Guardian(double peso, String nombre, String anio, String casa, int numUniforme) {
+    public Guardian(int reflejo, String nombre, String anio, String casa, int numUniforme) {
         super(nombre, anio, casa, numUniforme);
-        this.peso = peso;
+        this.reflejo = reflejo;
     }
 
-    public double getPeso() {
-        return peso;
+    public double getReflejo() {
+        return reflejo;
     }
 
-    public void setPeso(double peso) {
-        this.peso = peso;
+    public void setReflejo(int reflejo) {
+        this.reflejo = reflejo;
     }
 
-    public double velocidad() {
-        return (200 / peso) * 7;
+    public int agilidadGuardian() {
+        return reflejo + 7;
+
     }
 
     @Override
-    public int ataque() {
-        return 0;
+    public boolean ataque(int velocidad) {
+        boolean guardi;
+        int agiGuardia = agilidadGuardian();
+        if (agilidadGuardian() > velocidad) {
+            guardi = true;
+            agiGuardia += 7;
+            System.out.println(" Atajó el gol");
+
+        } else {
+            guardi = false;
+            System.out.println(" Recibió gol");
+        }
+        return guardi;
     }
-    
-    
+
+    @Override
+    public boolean trampa() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }

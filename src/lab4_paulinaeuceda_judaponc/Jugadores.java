@@ -53,7 +53,9 @@ public abstract class Jugadores {
     }
     
     
-     public abstract int ataque();
+     public abstract boolean ataque(int x);
+     public abstract boolean trampa();
+     
     
 
 }
