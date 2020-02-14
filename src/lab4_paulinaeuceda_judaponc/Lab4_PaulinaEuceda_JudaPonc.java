@@ -258,10 +258,21 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                             System.out.print("Ingrese el nivel de reflejos [1-10]: ");
                                             nivelReflejo = lea.nextInt();
                                         }
-                                        System.out.println("");
+                                        resp ='n';                                     
                                         
+                                        break;
+                                    case 3:
+                                        System.out.print("Ingrese el peso: ");
+                                        peso = lea.nextInt();
                                         
-                                        
+                                        System.out.print("Ingrese el nivel de reflejos [1-10]: ");
+                                        nivelReflejo = lea.nextInt();
+                                        while(nivelReflejo<1 || nivelReflejo>15){
+                                            System.out.println("No esta dentro del rango");
+                                            System.out.print("Ingrese el nivel de reflejos [1-10]: ");
+                                            nivelReflejo = lea.nextInt();
+                                        }
+                                        resp ='n';
                                         break;
                                     default:
                                         System.out.println("Opcion incorrecta");
