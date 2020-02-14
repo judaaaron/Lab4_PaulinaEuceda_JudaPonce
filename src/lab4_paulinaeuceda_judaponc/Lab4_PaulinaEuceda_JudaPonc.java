@@ -22,7 +22,7 @@ public class Lab4_PaulinaEuceda_JudaPonc {
             System.out.print("Ingrese la opcion que desea: ");
             int opcionMenu1 = lea.nextInt();
 
-            String casa="";
+            String casa = "";
             int partidosGanados = 0, partidosPerdidos = 0, promedioAgilidad, promedioVelocidad, promedioFuerza;
             boolean equipoCreado = false;
 
@@ -63,23 +63,69 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                     System.out.println("Opcion incorrecta");
                                     break;
                             }//fin menu casa
-                            
+
                             ArrayList<Jugadores> listaJugador = new ArrayList();
                             equipos.add(new Equipo(casa, partidosGanados, partidosPerdidos));
-                            
+
                             //despues de aqui se crea el equipo
                             equipoCreado = true;
                             break;
                         case 2://modificar equipo
                             break;
                         case 3://eliminar equipo
+                            String salidass = "";
+                            for (Object o : equipos) {
+
+                                salidass += " [" + equipos.indexOf(o) + "] " + o + "\n";
+
+                            }
+                            System.out.println(salidass);
+                            System.out.println(" Seleccione la posicion para eliminar el equipo");
+                            int posicion = lea.nextInt();
+                            boolean name = false;
+                            for (int i = 0; i < equipos.size(); i++) {
+                                if (posicion == i) {
+                                    name = false;
+                                    break;
+                                } else {
+                                    name = true;
+                                }
+
+                            }
+                            if (name == false) {
+                                equipos.remove(posicion);
+                                System.out.println(" El equipo ha sido eliminado con exito");
+                                System.out.println();
+
+                            } else {
+                                System.out.println(" Error!!! Posicion seleccionada no existe");
+                                System.out.println();
+
+                            }
+
                             break;
                         case 4://listar equipo
+                            if (equipos.isEmpty()) {
+                                System.out.println(" No hay equipos registrados hasta el momento");
+                                System.out.println();
+                                break;
+
+                            }
+
+                            String salidas = "";
+                            for (Object o : equipos) {
+
+                                salidas += " [" + equipos.indexOf(o) + "] " + o + "\n";
+
+                            }
+                            System.out.println(salidas);
+
                             break;
                         case 5://mostrar stats
                             break;
                         default:
                             System.out.println("Opcion incorrecta");
+                            System.out.println("");
                     }
                     break;
                 case 2://jugador
@@ -145,44 +191,44 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                         break;
                                 }
                             }
-                            
+
                             resp = 's';
-                            
-                            while(resp == 's'){
-                            System.out.println("1) Gryffindor");
-                            System.out.println("2) Slytherin");
-                            System.out.println("3) Ravenclaw");
-                            System.out.println("4) Hufflepuff");
-                            System.out.print("Ingrese la casa de su equipo: ");
-                            int casaEleccion = lea.nextInt();
-                            switch (casaEleccion) {
-                                case 1:
-                                    casa = "Gryffindor";
-                                    resp = 'n';
-                                    break;
-                                case 2:
-                                    casa = "Slytherin";
-                                    resp = 'n';
-                                    break;
-                                case 3:
-                                    casa = "Ravenclaw";
-                                    resp = 'n';
-                                    break;
-                                case 4:
-                                    casa = "Hufflepuff";
-                                    resp = 'n';
-                                    break;
-                                default:
-                                    System.out.println("Opcion incorrecta");
-                                    break;
-                            }//fin menu casa
+
+                            while (resp == 's') {
+                                System.out.println("1) Gryffindor");
+                                System.out.println("2) Slytherin");
+                                System.out.println("3) Ravenclaw");
+                                System.out.println("4) Hufflepuff");
+                                System.out.print("Ingrese la casa de su equipo: ");
+                                int casaEleccion = lea.nextInt();
+                                switch (casaEleccion) {
+                                    case 1:
+                                        casa = "Gryffindor";
+                                        resp = 'n';
+                                        break;
+                                    case 2:
+                                        casa = "Slytherin";
+                                        resp = 'n';
+                                        break;
+                                    case 3:
+                                        casa = "Ravenclaw";
+                                        resp = 'n';
+                                        break;
+                                    case 4:
+                                        casa = "Hufflepuff";
+                                        resp = 'n';
+                                        break;
+                                    default:
+                                        System.out.println("Opcion incorrecta");
+                                        break;
+                                }//fin menu casa
                             }
-                            
+
                             System.out.print("Ingrese el numero de uniforme: ");
                             año = lea.next();
-                            
+
                             resp = 's';
-                            while(resp=='s'){
+                            while (resp == 's') {
                                 System.out.println("1) Guardian");
                                 System.out.println("2) Golpeador");
                                 System.out.println("3) Cazadores");
@@ -202,17 +248,53 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                         System.out.println("Opcion incorrecta");
                                         break;
                                 }
-                            
+
                             }
-                            
+
                             break;
                         case 2://modificar jugador
 
                             break;
                         case 3://eliminar jugador
+                            String salidass = "";
+                            for (Object o : jugadores) {
+
+                                salidass += " [" + jugadores.indexOf(o) + "] " + o + "\n";
+
+                            }
+                            System.out.println(salidass);
+                            System.out.println(" Seleccione la posicion para eliminar el jugador");
+                            int posicion = lea.nextInt();
+                            boolean name = false;
+                            for (int i = 0; i < jugadores.size(); i++) {
+                                if (posicion == i) {
+                                    name = false;
+                                    break;
+                                } else {
+                                    name = true;
+                                }
+
+                            }
+                            if (name == false) {
+                                jugadores.remove(posicion);
+                                System.out.println(" El jugador ha sido eliminado con exito");
+                                System.out.println();
+
+                            } else {
+                                System.out.println(" Error!!! Posicion seleccionada no existe");
+                                System.out.println();
+
+                            }
 
                             break;
                         case 4://listar jugadores
+                            String salid = "";
+                            for (Object o : jugadores) {
+
+                                salid += " [" + jugadores.indexOf(o) + "] " + o + "\n";
+
+                            }
+                            System.out.println(salid);
 
                             break;
                         default:
