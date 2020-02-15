@@ -46,6 +46,13 @@ public class Cazador extends Jugadores {
     }
 
     @Override
+    public String toString() {
+        return super.toString() + "Cazador{" + "peso=" + peso + ", reflejo=" + reflejo + '}';
+    }
+    
+    
+
+    @Override
     public boolean ataque(int x) {
         boolean gol;
         int sumaCazador=velocidadCazador()+agilidadCazador();

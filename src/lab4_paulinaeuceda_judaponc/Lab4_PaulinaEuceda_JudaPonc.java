@@ -286,29 +286,32 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                     }
                                     if (cont >= 1) {
                                         disponible = false;
+                                        jugadores.remove(pos);
                                     }
                                 } else if (jugadores.get(pos) instanceof Cazador) {
                                     for (int j = 0; j < equipos.get(posii).getPlayers().size(); j++) {
                                         if (equipos.get(posii).getPlayers().get(j) instanceof Cazador) {
                                             cont++;
-                                            jugadores.remove(pos);
+
                                         }
 
                                     }
                                     if (cont >= 3) {
                                         disponible = false;
+                                        jugadores.remove(pos);
                                     }
 
                                 } else if (jugadores.get(pos) instanceof Buscador) {
                                     for (int j = 0; j < equipos.get(posii).getPlayers().size(); j++) {
                                         if (equipos.get(posii).getPlayers().get(j) instanceof Buscador) {
                                             cont++;
-                                            jugadores.remove(pos);
+
                                         }
 
                                     }
                                     if (cont >= 1) {
                                         disponible = false;
+                                        jugadores.remove(pos);
                                     }
 
                                 } else if (jugadores.get(pos) instanceof golpeador) {
@@ -330,6 +333,7 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                     jugadores.remove(pos);
                                 } else {
                                     System.out.println(" Ya hay sufientens jugadores en el equipo en esta posicion");
+                                    System.out.println();
                                 }
 
                             }

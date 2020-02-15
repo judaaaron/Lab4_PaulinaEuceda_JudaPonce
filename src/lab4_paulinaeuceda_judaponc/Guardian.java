@@ -29,6 +29,13 @@ public class Guardian extends Jugadores {
 
     }
 
+    @Override
+    public String toString() {
+        return  super.toString() + "Guardian{" + "reflejo=" + reflejo + '}';
+    }
+    
+    
+
     
     public boolean ataque(int velocidad) {
         boolean guardi;

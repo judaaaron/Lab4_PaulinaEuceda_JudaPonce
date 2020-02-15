@@ -27,6 +27,12 @@ public class Buscador extends Jugadores {
         
         return (200/pesoBuscador)*7;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Buscador{" + "pesoBuscador=" + pesoBuscador + '}';
+    }
+    
     
     
 
