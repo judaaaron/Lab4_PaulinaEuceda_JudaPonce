@@ -8,7 +8,7 @@ public class Guardian extends Jugadores {
         super();
     }
 
-    public Guardian(int reflejo, String nombre, String anio, String casa, int numUniforme) {
+    public Guardian(int reflejo, String nombre, String anio, String casa, int numUniforme) throws Exception {
         super(nombre, anio, casa, numUniforme);
         this.reflejo = reflejo;
     }
