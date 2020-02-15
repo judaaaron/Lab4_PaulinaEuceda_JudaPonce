@@ -13,30 +13,30 @@ public class Lab4_PaulinaEuceda_JudaPonc {
     static ArrayList<Equipo> equipos = new ArrayList();
 
     public static void main(String[] args) throws Exception {
-//        equipos.add(new Equipo("Gryffindor", 0, 0));
-//        equipos.add(new Equipo("Slytherin", 0, 0));
-//        equipos.get(0).getPlayers().add(new Guardian(5, "Marc", "Tercer", "Gryffindor", 12));
-//        equipos.get(0).getPlayers().add(new golpeador(14, 6, "Pablo", "Quinto", "Gryffindor", 2));
-//        equipos.get(0).getPlayers().add(new golpeador(6, 3, "Marcos", "Segundo", "Gryffindor", 6));
-//        equipos.get(0).getPlayers().add(new Cazador(188, 14, "Sebas", "Sexto", "Gryffindor", 11));
-//        equipos.get(0).getPlayers().add(new Cazador(123, 7, "Yuda", "Septimo", "Gryffindor", 14));
-//        equipos.get(0).getPlayers().add(new Cazador(126, 9, "Diego", "Cuarto", "Gryffindor", 16));
-//        equipos.get(0).getPlayers().add(new Buscador(120, "Vargas", "Quinto", "Gryffindor", 19));
-//
-//        equipos.get(1).getPlayers().add(new Guardian(7, "Sergio", "Tercer", "Slytherin", 12));
-//        equipos.get(1).getPlayers().add(new golpeador(15, 6, "David", "Quinto", "Slytherin", 2));
-//        equipos.get(1).getPlayers().add(new golpeador(5, 5, "Jhon", "Segundo", "Slytherin", 6));
-//        equipos.get(1).getPlayers().add(new Cazador(170, 12, "Camilo", "Sexto", "Slytherin", 11));
-//        equipos.get(1).getPlayers().add(new Cazador(134, 9, "Felipe", "Septimo", "Slytherin", 14));
-//        equipos.get(1).getPlayers().add(new Cazador(120, 10, "Ian", "Cuarto", "Slytherin", 16));
-//        equipos.get(1).getPlayers().add(new Buscador(121, "Miguel", "Quinto", "Slytherin", 19));
-//        equipos.get(1).getPlayers().add(new Guardian(5, "Marc", "Tercer", "Gryffindor", 12));
-//        equipos.get(1).getPlayers().add(new golpeador(14, 6, "Pablo", "Quinto", "Gryffindor", 2));
-//        equipos.get(1).getPlayers().add(new golpeador(6, 3, "Marcos", "Segundo", "Gryffindor", 6));
-//        equipos.get(1).getPlayers().add(new Cazador(188, 14, "Sebas", "Sexto", "Gryffindor", 11));
-//        equipos.get(1).getPlayers().add(new Cazador(123, 7, "Yuda", "Septimo", "Gryffindor", 14));
-//        equipos.get(1).getPlayers().add(new Cazador(126, 9, "Diego", "Cuarto", "Gryffindor", 16));
-//        equipos.get(1).getPlayers().add(new Buscador(120, "Vargas", "Quinto", "Gryffindor", 19));
+        equipos.add(new Equipo("Gryffindor", 0, 0));
+        equipos.add(new Equipo("Slytherin", 0, 0));
+        equipos.get(0).getPlayers().add(new Guardian(5, "Marc", "Tercer", "Gryffindor", 12));
+        equipos.get(0).getPlayers().add(new golpeador(14, 6, "Pablo", "Quinto", "Gryffindor", 2));
+        equipos.get(0).getPlayers().add(new golpeador(6, 3, "Marcos", "Segundo", "Gryffindor", 6));
+        equipos.get(0).getPlayers().add(new Cazador(188, 14, "Sebas", "Sexto", "Gryffindor", 11));
+        equipos.get(0).getPlayers().add(new Cazador(123, 7, "Yuda", "Septimo", "Gryffindor", 14));
+        equipos.get(0).getPlayers().add(new Cazador(126, 9, "Diego", "Cuarto", "Gryffindor", 16));
+        equipos.get(0).getPlayers().add(new Buscador(120, "Vargas", "Quinto", "Gryffindor", 19));
+
+        equipos.get(1).getPlayers().add(new Guardian(7, "Sergio", "Tercer", "Slytherin", 12));
+        equipos.get(1).getPlayers().add(new golpeador(15, 6, "David", "Quinto", "Slytherin", 2));
+        equipos.get(1).getPlayers().add(new golpeador(5, 5, "Jhon", "Segundo", "Slytherin", 6));
+        equipos.get(1).getPlayers().add(new Cazador(170, 12, "Camilo", "Sexto", "Slytherin", 11));
+        equipos.get(1).getPlayers().add(new Cazador(134, 9, "Felipe", "Septimo", "Slytherin", 14));
+        equipos.get(1).getPlayers().add(new Cazador(120, 10, "Ian", "Cuarto", "Slytherin", 16));
+        equipos.get(1).getPlayers().add(new Buscador(121, "Miguel", "Quinto", "Slytherin", 19));
+        equipos.get(1).getPlayers().add(new Guardian(5, "Marc", "Tercer", "Gryffindor", 12));
+        equipos.get(1).getPlayers().add(new golpeador(14, 6, "Pablo", "Quinto", "Gryffindor", 2));
+        equipos.get(1).getPlayers().add(new golpeador(6, 3, "Marcos", "Segundo", "Gryffindor", 6));
+        equipos.get(1).getPlayers().add(new Cazador(188, 14, "Sebas", "Sexto", "Gryffindor", 11));
+        equipos.get(1).getPlayers().add(new Cazador(123, 7, "Yuda", "Septimo", "Gryffindor", 14));
+        equipos.get(1).getPlayers().add(new Cazador(126, 9, "Diego", "Cuarto", "Gryffindor", 16));
+        equipos.get(1).getPlayers().add(new Buscador(120, "Vargas", "Quinto", "Gryffindor", 19));
 
         char salida = 's';
         boolean equipoCreado = false;
@@ -88,6 +88,7 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                     break;
                                 default:
                                     System.out.println("Opcion incorrecta");
+                                    System.out.println();
                                     break;
                             }//fin menu casa
 
@@ -126,56 +127,44 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                 }
 
                             }
-                            System.out.println(" 1. modifcar casa");
-                            System.out.println(" 2. agregar jugadores");
-                            System.out.println(" Seleccione opcion");
-                            int opi = lea.nextInt();
-                            switch (opi) {
-                                case 1:
 
-                                    if (value == false) {
-                                        String newCasa = "";
-                                        System.out.println(" Ingrese un nueva casa: ");
-                                        System.out.println("1) Gryffindor");
-                                        System.out.println("2) Slytherin");
-                                        System.out.println("3) Ravenclaw");
-                                        System.out.println("4) Hufflepuff");
-                                        int opciones = lea.nextInt();
-                                        switch (opciones) {
-                                            case 1:
-                                                newCasa = "Gryffindor";
-                                                break;
+                            if (value == false) {
+                                String newCasa = "";
+                                System.out.println(" Ingrese un nueva casa: ");
+                                System.out.println("1) Gryffindor");
+                                System.out.println("2) Slytherin");
+                                System.out.println("3) Ravenclaw");
+                                System.out.println("4) Hufflepuff");
+                                int opciones = lea.nextInt();
+                                switch (opciones) {
+                                    case 1:
+                                        newCasa = "Gryffindor";
+                                        break;
 
-                                            case 2:
-                                                newCasa = "Slytherin";
-                                                break;
+                                    case 2:
+                                        newCasa = "Slytherin";
+                                        break;
 
-                                            case 3:
-                                                newCasa = "Ravenclaw";
-                                                break;
+                                    case 3:
+                                        newCasa = "Ravenclaw";
+                                        break;
 
-                                            case 4:
-                                                newCasa = "Hufflepuff";
-                                                break;
-                                            default:
-                                                System.out.println(" Opcion incorrecta");
-                                                System.out.println("");
-                                        }
+                                    case 4:
+                                        newCasa = "Hufflepuff";
+                                        break;
+                                    default:
+                                        System.out.println(" Opcion incorrecta");
+                                        System.out.println("");
+                                }
 
-                                        equipos.get(posi).setCasa(newCasa);
-                                        System.out.println(" Casa del equipo ha modificada con exito");
-                                        System.out.println();
+                                equipos.get(posi).setCasa(newCasa);
+                                System.out.println(" Casa del equipo ha modificada con exito");
+                                System.out.println();
 
-                                    } else {
-                                        System.out.println(" Error!!! Posicion seleccionada no existe");
-                                        System.out.println();
+                            } else {
+                                System.out.println(" Error!!! Posicion seleccionada no existe");
+                                System.out.println();
 
-                                    }
-
-                                    break;
-
-                                default:
-                                    throw new AssertionError();
                             }
 
                             break;
@@ -474,7 +463,21 @@ public class Lab4_PaulinaEuceda_JudaPonc {
 
                             System.out.print("Ingrese el numero de uniforme: ");
                             numUniforme = lea.nextInt();
+                            boolean nume = false;
+                            for (int i = 0; i < jugadores.size(); i++) {
 
+                                while (numUniforme == jugadores.get(i).getNumUniforme()) {
+                                    nume = true;
+                                }
+
+                            }
+
+                            if (nume == true) {
+                                System.out.println(" Los numeros de uniforme deben ser distinos");
+                                System.out.println(" Ingrese nuevo");
+                                numUniforme = lea.nextInt();
+
+                            }
                             resp = 's';
                             while (resp == 's') {
                                 System.out.println("1) Guardian");
@@ -518,6 +521,7 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                         resp = 'n';
 
                                         break;
+
                                     case 3:
                                         System.out.print("Ingrese el peso: ");
                                         peso = lea.nextInt();
@@ -776,8 +780,12 @@ public class Lab4_PaulinaEuceda_JudaPonc {
         }//fin while salida
     }//fin main
 
-    static public void Simular() {
+    static public void Simular() throws Exception {
+        try {
 
+        } catch (Exception e) {
+            System.out.println(e);
+        }
         for (int i = 0; i < jugadores.size(); i++) {
             if (jugadores.get(i) instanceof Cazador) {
 
