@@ -8,7 +8,7 @@ public class golpeador extends Jugadores {
         super();
     }
 
-    public golpeador(int musculatura, int reflejos, String nombre, String anio, String casa, int numUniforme) {
+    public golpeador(int musculatura, int reflejos, String nombre, String anio, String casa, int numUniforme){
         super(nombre, anio, casa, numUniforme);
         this.musculatura = musculatura;
         this.reflejos = reflejos;
@@ -52,7 +52,7 @@ public class golpeador extends Jugadores {
         int agilidad = agilidadGolpeador();
         if (fuerzaGolpeador() * 2 > sumaFuerzas) {
             exito = true;
-            System.out.println(" Logró atacó con exito");
+            System.out.println(" Logró atacar con exito");
             force += 10;
         } else if (agilidadGolpeador() / 2 > sumaFuerzas) {
             agilidad += 10;

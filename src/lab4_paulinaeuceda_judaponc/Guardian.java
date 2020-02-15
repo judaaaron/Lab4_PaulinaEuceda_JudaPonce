@@ -8,7 +8,7 @@ public class Guardian extends Jugadores {
         super();
     }
 
-    public Guardian(int reflejo, String nombre, String anio, String casa, int numUniforme) {
+    public Guardian(int reflejo, String nombre, String anio, String casa, int numUniforme){
         super(nombre, anio, casa, numUniforme);
         this.reflejo = reflejo;
     }
@@ -26,7 +26,7 @@ public class Guardian extends Jugadores {
 
     }
 
-    @Override
+    
     public boolean ataque(int velocidad) {
         boolean guardi;
         int agiGuardia = agilidadGuardian();
@@ -46,5 +46,9 @@ public class Guardian extends Jugadores {
     public boolean trampa() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    
+
+    
 
 }

@@ -12,7 +12,7 @@ public class Lab4_PaulinaEuceda_JudaPonc {
     static ArrayList<Jugadores> jugadores = new ArrayList();
     static ArrayList<Equipo> equipos = new ArrayList();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         equipos.add(new Equipo("Gryffindor", 0, 0));
         equipos.add(new Equipo("Slytherin", 0, 0));
         equipos.get(0).getPlayers().add(new Guardian(5, "Marc", "Tercer", "Gryffindor", 12));
@@ -30,13 +30,6 @@ public class Lab4_PaulinaEuceda_JudaPonc {
         equipos.get(1).getPlayers().add(new Cazador(134, 9, "Felipe", "Septimo", "Slytherin", 14));
         equipos.get(1).getPlayers().add(new Cazador(120, 10, "Ian", "Cuarto", "Slytherin", 16));
         equipos.get(1).getPlayers().add(new Buscador(121, "Miguel", "Quinto", "Slytherin", 19));
-        equipos.get(1).getPlayers().add(new Guardian(5, "Marc", "Tercer", "Gryffindor", 12));
-        equipos.get(1).getPlayers().add(new golpeador(14, 6, "Pablo", "Quinto", "Gryffindor", 2));
-        equipos.get(1).getPlayers().add(new golpeador(6, 3, "Marcos", "Segundo", "Gryffindor", 6));
-        equipos.get(1).getPlayers().add(new Cazador(188, 14, "Sebas", "Sexto", "Gryffindor", 11));
-        equipos.get(1).getPlayers().add(new Cazador(123, 7, "Yuda", "Septimo", "Gryffindor", 14));
-        equipos.get(1).getPlayers().add(new Cazador(126, 9, "Diego", "Cuarto", "Gryffindor", 16));
-        equipos.get(1).getPlayers().add(new Buscador(120, "Vargas", "Quinto", "Gryffindor", 19));
 
         char salida = 's';
         boolean equipoCreado = false;
@@ -90,7 +83,6 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                     break;
                             }//fin menu casa
 
-                            ArrayList<Jugadores> listaJugador = new ArrayList();
                             equipos.add(new Equipo(Teamcasa, partidosGanados, partidosPerdidos));
                             System.out.println("Equipo creado");
                             //despues de aqui se crea el equipo
@@ -661,6 +653,7 @@ public class Lab4_PaulinaEuceda_JudaPonc {
     }//fin main
 
     static public void Simular() {
+        int n=0;
         boolean fin = false;
         for (int i = 0; i < equipos.size(); i++) {
             System.out.println(i + ") " + equipos.get(i));
@@ -694,16 +687,43 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                 System.out.println("2) Trampa");
                 System.out.print("Ingrese modo de jugar: ");
                 int modo = lea.nextInt();
-
                 char resp = 's';
                 while (resp == 's') {
                     resp = 'n';
                     switch (modo) {
                         case 1:
                             if(equipos.get(equipo).getPlayers().get(jugador) instanceof Guardian){
+                                int cazador = 3+ ran.nextInt(3);
+                                if(((Guardian)equipos.get(equipo).getPlayers().get(jugador)).ataque(((Cazador)equipos.get(equiRandom).getPlayers().get(cazador)).velocidadCazador())== true){
+                                    n+=8;
+                                }
                                 
-                                ((Guardian)equipos.get(equipo).getPlayers().get(jugador)).ataque(((Cazador)equipos.get(equiRandom).getPlayers().get(4)).velocidadCazador());
-                               
+                            } 
+                            if(equipos.get(equipo).getPlayers().get(jugador) instanceof golpeador){
+                                System.out.println("1) Atacar");
+                                System.out.println("2) Defender");
+                                System.out.print("Ingrese la opcion que desea: ");
+                                int elegir = lea.nextInt();
+                                switch (elegir) {
+                                    case 1:
+                                        ((golpeador)equipos.get(equipo).getPlayers().get(jugador)).ataque(((golpeador)equipos.get(equiRandom).getPlayers().get(1)).fuerzaGolpeador()+((golpeador)equipos.get(equiRandom).getPlayers().get(2)).fuerzaGolpeador());
+                                        break;
+                                    case 2:
+                                        
+                                        break;
+                                    default:
+                                        System.out.println("No es correcto");
+                                        break;
+                                }
+                            }
+                            if(equipos.get(equipo).getPlayers().get(jugador) instanceof Cazador){
+                                ((Cazador)equipos.get(equipo).getPlayers().get(jugador)).ataque(((Guardian)equipos.get(equiRandom).getPlayers().get(0)).agilidadGuardian());
+                                
+                            }
+                            if(equipos.get(equipo).getPlayers().get(jugador) instanceof Buscador){
+                                if(((Buscador)equipos.get(equipo).getPlayers().get(jugador)).ataque(((Buscador)equipos.get(equiRandom).getPlayers().get(6)).velocidadBuscador())==true){
+                                    fin = true;
+                                }
                             }
                             break;
                         case 2:
@@ -715,8 +735,9 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                             break;
                     }
                 }
+                turno++;
             } else {
-
+                turno++;
             }
         }
         

@@ -8,7 +8,7 @@ public abstract class Jugadores {
     public Jugadores() {
     }
 
-    public Jugadores(String nombre, String anio, String casa, int numUniforme) throws Exception{
+    public Jugadores(String nombre, String anio, String casa, int numUniforme){
         this.nombre = nombre;
         this.anio = anio;
         this.casa = casa;
