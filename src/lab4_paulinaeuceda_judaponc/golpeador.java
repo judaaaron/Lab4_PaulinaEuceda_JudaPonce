@@ -8,13 +8,14 @@ public class golpeador extends Jugadores {
         super();
     }
 
-    public golpeador(int musculatura, int reflejos, String nombre, String anio, String casa, int numUniforme) {
+    public golpeador(int musculatura, int reflejos, String nombre, String anio, String casa, int numUniforme) throws Exception {
         super(nombre, anio, casa, numUniforme);
         this.musculatura = musculatura;
         this.reflejos = reflejos;
-
     }
 
+
+    
     public int getMusculatura() {
         return musculatura;
     }

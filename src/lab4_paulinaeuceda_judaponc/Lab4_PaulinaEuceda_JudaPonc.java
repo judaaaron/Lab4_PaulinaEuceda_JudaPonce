@@ -12,31 +12,31 @@ public class Lab4_PaulinaEuceda_JudaPonc {
     static ArrayList<Jugadores> jugadores = new ArrayList();
     static ArrayList<Equipo> equipos = new ArrayList();
 
-    public static void main(String[] args) {
-        equipos.add(new Equipo("Gryffindor", 0, 0));
-        equipos.add(new Equipo("Slytherin", 0, 0));
-        equipos.get(0).getPlayers().add(new Guardian(5, "Marc", "Tercer", "Gryffindor", 12));
-        equipos.get(0).getPlayers().add(new golpeador(14, 6, "Pablo", "Quinto", "Gryffindor", 2));
-        equipos.get(0).getPlayers().add(new golpeador(6, 3, "Marcos", "Segundo", "Gryffindor", 6));
-        equipos.get(0).getPlayers().add(new Cazador(188, 14, "Sebas", "Sexto", "Gryffindor", 11));
-        equipos.get(0).getPlayers().add(new Cazador(123, 7, "Yuda", "Septimo", "Gryffindor", 14));
-        equipos.get(0).getPlayers().add(new Cazador(126, 9, "Diego", "Cuarto", "Gryffindor", 16));
-        equipos.get(0).getPlayers().add(new Buscador(120, "Vargas", "Quinto", "Gryffindor", 19));
-
-        equipos.get(1).getPlayers().add(new Guardian(7, "Sergio", "Tercer", "Slytherin", 12));
-        equipos.get(1).getPlayers().add(new golpeador(15, 6, "David", "Quinto", "Slytherin", 2));
-        equipos.get(1).getPlayers().add(new golpeador(5, 5, "Jhon", "Segundo", "Slytherin", 6));
-        equipos.get(1).getPlayers().add(new Cazador(170, 12, "Camilo", "Sexto", "Slytherin", 11));
-        equipos.get(1).getPlayers().add(new Cazador(134, 9, "Felipe", "Septimo", "Slytherin", 14));
-        equipos.get(1).getPlayers().add(new Cazador(120, 10, "Ian", "Cuarto", "Slytherin", 16));
-        equipos.get(1).getPlayers().add(new Buscador(121, "Miguel", "Quinto", "Slytherin", 19));
-        equipos.get(1).getPlayers().add(new Guardian(5, "Marc", "Tercer", "Gryffindor", 12));
-        equipos.get(1).getPlayers().add(new golpeador(14, 6, "Pablo", "Quinto", "Gryffindor", 2));
-        equipos.get(1).getPlayers().add(new golpeador(6, 3, "Marcos", "Segundo", "Gryffindor", 6));
-        equipos.get(1).getPlayers().add(new Cazador(188, 14, "Sebas", "Sexto", "Gryffindor", 11));
-        equipos.get(1).getPlayers().add(new Cazador(123, 7, "Yuda", "Septimo", "Gryffindor", 14));
-        equipos.get(1).getPlayers().add(new Cazador(126, 9, "Diego", "Cuarto", "Gryffindor", 16));
-        equipos.get(1).getPlayers().add(new Buscador(120, "Vargas", "Quinto", "Gryffindor", 19));
+    public static void main(String[] args) throws Exception {
+//        equipos.add(new Equipo("Gryffindor", 0, 0));
+//        equipos.add(new Equipo("Slytherin", 0, 0));
+//        equipos.get(0).getPlayers().add(new Guardian(5, "Marc", "Tercer", "Gryffindor", 12));
+//        equipos.get(0).getPlayers().add(new golpeador(14, 6, "Pablo", "Quinto", "Gryffindor", 2));
+//        equipos.get(0).getPlayers().add(new golpeador(6, 3, "Marcos", "Segundo", "Gryffindor", 6));
+//        equipos.get(0).getPlayers().add(new Cazador(188, 14, "Sebas", "Sexto", "Gryffindor", 11));
+//        equipos.get(0).getPlayers().add(new Cazador(123, 7, "Yuda", "Septimo", "Gryffindor", 14));
+//        equipos.get(0).getPlayers().add(new Cazador(126, 9, "Diego", "Cuarto", "Gryffindor", 16));
+//        equipos.get(0).getPlayers().add(new Buscador(120, "Vargas", "Quinto", "Gryffindor", 19));
+//
+//        equipos.get(1).getPlayers().add(new Guardian(7, "Sergio", "Tercer", "Slytherin", 12));
+//        equipos.get(1).getPlayers().add(new golpeador(15, 6, "David", "Quinto", "Slytherin", 2));
+//        equipos.get(1).getPlayers().add(new golpeador(5, 5, "Jhon", "Segundo", "Slytherin", 6));
+//        equipos.get(1).getPlayers().add(new Cazador(170, 12, "Camilo", "Sexto", "Slytherin", 11));
+//        equipos.get(1).getPlayers().add(new Cazador(134, 9, "Felipe", "Septimo", "Slytherin", 14));
+//        equipos.get(1).getPlayers().add(new Cazador(120, 10, "Ian", "Cuarto", "Slytherin", 16));
+//        equipos.get(1).getPlayers().add(new Buscador(121, "Miguel", "Quinto", "Slytherin", 19));
+//        equipos.get(1).getPlayers().add(new Guardian(5, "Marc", "Tercer", "Gryffindor", 12));
+//        equipos.get(1).getPlayers().add(new golpeador(14, 6, "Pablo", "Quinto", "Gryffindor", 2));
+//        equipos.get(1).getPlayers().add(new golpeador(6, 3, "Marcos", "Segundo", "Gryffindor", 6));
+//        equipos.get(1).getPlayers().add(new Cazador(188, 14, "Sebas", "Sexto", "Gryffindor", 11));
+//        equipos.get(1).getPlayers().add(new Cazador(123, 7, "Yuda", "Septimo", "Gryffindor", 14));
+//        equipos.get(1).getPlayers().add(new Cazador(126, 9, "Diego", "Cuarto", "Gryffindor", 16));
+//        equipos.get(1).getPlayers().add(new Buscador(120, "Vargas", "Quinto", "Gryffindor", 19));
 
         char salida = 's';
         boolean equipoCreado = false;
@@ -61,7 +61,8 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                     System.out.println("2) Modifcar equipo");
                     System.out.println("3) Eliminar equipo");
                     System.out.println("4) Listar equipos");
-                    System.out.println("5) Mostrar stat");
+                    System.out.println("5) Agregar Jugadores");
+                    System.out.println("6) Mostrar stat");
                     System.out.print("Ingrese la opcion que desea: ");
                     int opcionMenuEquipo = lea.nextInt();
                     switch (opcionMenuEquipo) {
@@ -104,6 +105,7 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                 break;
 
                             }
+
                             String endi = "";
                             for (Object o : equipos) {
 
@@ -112,7 +114,7 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                             }
                             System.out.println();
                             System.out.println(endi);
-                            System.out.print(" Seleccione la posicion para modificar la casa del equipo: ");
+                            System.out.print(" Seleccione la posicion para modificar equipo: ");
                             int posi = lea.nextInt();
                             boolean value = false;
                             for (int i = 0; i < equipos.size(); i++) {
@@ -124,44 +126,56 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                 }
 
                             }
+                            System.out.println(" 1. modifcar casa");
+                            System.out.println(" 2. agregar jugadores");
+                            System.out.println(" Seleccione opcion");
+                            int opi = lea.nextInt();
+                            switch (opi) {
+                                case 1:
 
-                            if (value == false) {
-                                String newCasa = "";
-                                System.out.println(" Ingrese un nueva casa: ");
-                                System.out.println("1) Gryffindor");
-                                System.out.println("2) Slytherin");
-                                System.out.println("3) Ravenclaw");
-                                System.out.println("4) Hufflepuff");
-                                int opciones = lea.nextInt();
-                                switch (opciones) {
-                                    case 1:
-                                        newCasa = "Gryffindor";
-                                        break;
+                                    if (value == false) {
+                                        String newCasa = "";
+                                        System.out.println(" Ingrese un nueva casa: ");
+                                        System.out.println("1) Gryffindor");
+                                        System.out.println("2) Slytherin");
+                                        System.out.println("3) Ravenclaw");
+                                        System.out.println("4) Hufflepuff");
+                                        int opciones = lea.nextInt();
+                                        switch (opciones) {
+                                            case 1:
+                                                newCasa = "Gryffindor";
+                                                break;
 
-                                    case 2:
-                                        newCasa = "Slytherin";
-                                        break;
+                                            case 2:
+                                                newCasa = "Slytherin";
+                                                break;
 
-                                    case 3:
-                                        newCasa = "Ravenclaw";
-                                        break;
+                                            case 3:
+                                                newCasa = "Ravenclaw";
+                                                break;
 
-                                    case 4:
-                                        newCasa = "Hufflepuff";
-                                        break;
-                                    default:
-                                        System.out.println(" Opcion incorrecta");
-                                        System.out.println("");
-                                }
+                                            case 4:
+                                                newCasa = "Hufflepuff";
+                                                break;
+                                            default:
+                                                System.out.println(" Opcion incorrecta");
+                                                System.out.println("");
+                                        }
 
-                                equipos.get(posi).setCasa(newCasa);
-                                System.out.println(" Casa del equipo ha modificada con exito");
-                                System.out.println();
+                                        equipos.get(posi).setCasa(newCasa);
+                                        System.out.println(" Casa del equipo ha modificada con exito");
+                                        System.out.println();
 
-                            } else {
-                                System.out.println(" Error!!! Posicion seleccionada no existe");
-                                System.out.println();
+                                    } else {
+                                        System.out.println(" Error!!! Posicion seleccionada no existe");
+                                        System.out.println();
 
+                                    }
+
+                                    break;
+
+                                default:
+                                    throw new AssertionError();
                             }
 
                             break;
@@ -222,7 +236,111 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                             System.out.println(salidas);
 
                             break;
-                        case 5://mostrar stats
+                        case 5:// agregar jugador
+                            salidas = "";
+                            for (Object o : equipos) {
+
+                                salidas += " [" + equipos.indexOf(o) + "] " + o + "\n";
+
+                            }
+                            System.out.println(salidas);
+
+                            System.out.println();
+
+                            System.out.print(" Seleccione la posicion del equipo: ");
+                            int posii = lea.nextInt();
+
+                            System.out.println("");
+                            System.out.println();
+                            String end = "";
+
+                            System.out.println(" Listado de jugadores");
+                            for (Object o : jugadores) {
+
+                                end += " [" + jugadores.indexOf(o) + "] " + o + "\n";
+
+                            }
+
+                            System.out.println(end);
+                            System.out.print(" Seleccione la posicion del jugador que desea agregar al equipo: ");
+                            int pos = lea.nextInt();
+                            boolean play = false;
+                            for (int i = 0; i < jugadores.size(); i++) {
+                                if (pos == i) {
+                                    play = false;
+                                    break;
+                                } else {
+                                    play = true;
+                                }
+
+                            }
+
+                            if (play == false) {
+                                boolean disponible = true;
+                                int cont = 0;
+                                
+                                    if (jugadores.get(pos) instanceof Guardian) {
+                                        for (int j = 0; j < equipos.get(posii).getPlayers().size(); j++) {
+                                            if (equipos.get(posii).getPlayers().get(j) instanceof Guardian) {
+                                                cont++;
+                                                jugadores.remove(pos);
+                                            }
+
+                                        }
+                                        if (cont >= 1) {
+                                            disponible = false;
+                                        }
+                                    } else if (jugadores.get(pos) instanceof Cazador) {
+                                        for (int j = 0; j < equipos.get(posii).getPlayers().size(); j++) {
+                                            if (equipos.get(posii).getPlayers().get(j) instanceof Cazador) {
+                                                cont++;
+                                                 jugadores.remove(pos);
+                                            }
+
+                                        }
+                                        if (cont >= 3) {
+                                            disponible = false;
+                                        }
+
+                                    } else if (jugadores.get(pos) instanceof Buscador) {
+                                        for (int j = 0; j < equipos.get(posii).getPlayers().size(); j++) {
+                                            if (equipos.get(posii).getPlayers().get(j) instanceof Buscador) {
+                                                cont++;
+                                                 jugadores.remove(pos);
+                                            }
+
+                                        }
+                                        if (cont >= 1) {
+                                            disponible = false;
+                                        }
+
+                                    } else if (jugadores.get(pos) instanceof golpeador) {
+                                        for (int j = 0; j < equipos.get(posii).getPlayers().size(); j++) {
+                                            if (equipos.get(posii).getPlayers().get(j) instanceof golpeador) {
+                                                cont++;
+                                                 jugadores.remove(pos);
+                                            }
+
+                                        }
+                                        if (cont >= 2) {
+                                            disponible = false;
+                                        }
+                                    }
+
+                                
+
+                                if (disponible == true) {
+                                    equipos.get(posii).getPlayers().add(jugadores.get(pos));
+
+                                } else {
+                                    System.out.println(" Ya hay sufientens jugadores en el equipo en su posicion");
+                                }
+
+                            }
+
+                            break;
+
+                        case 6://mostrar stats
                             for (int i = 0; i < equipos.size(); i++) {
                                 System.out.println(i + ") " + equipos.get(i).getCasa());
                             }
@@ -349,8 +467,8 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                 }//fin menu casa
 
                                 try {
-                                    Exceptions exi ;
-                                    exi = new Exceptions(Teamcasa, casaPlay); 
+                                    Exceptions exi;
+                                    exi = new Exceptions(Teamcasa, casaPlay);
                                 } catch (Exception e) {
                                     System.out.println(e);
                                 }
@@ -415,13 +533,13 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                         }
                                         jugadores.add(new Cazador(peso, nivelReflejo, nombre, año, casaPlay, numUniforme));
                                         resp = 'n';
-                                   
+
                                         break;
 
                                     case 4:
                                         System.out.print("Ingrese el peso: ");
                                         peso = lea.nextInt();
-                                     
+
                                         jugadores.add(new Buscador(peso, nombre, año, casaPlay, numUniforme));
                                         resp = 'n';
                                         break;
@@ -661,6 +779,13 @@ public class Lab4_PaulinaEuceda_JudaPonc {
     }//fin main
 
     static public void Simular() {
+
+        for (int i = 0; i < jugadores.size(); i++) {
+            if (jugadores.get(i) instanceof Cazador) {
+
+            }
+
+        }
         boolean fin = false;
         for (int i = 0; i < equipos.size(); i++) {
             System.out.println(i + ") " + equipos.get(i));
@@ -678,9 +803,7 @@ public class Lab4_PaulinaEuceda_JudaPonc {
         int turno = 0;
         while (fin == false) {
             if (turno % 2 == 0) {
-                
-                
-                
+
                 for (int i = 0; i < equipos.get(equipo).getPlayers().size(); i++) {
                     System.out.println(i + ") " + equipos.get(equipo).getPlayers().get(i));
                 }
@@ -700,10 +823,10 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                     resp = 'n';
                     switch (modo) {
                         case 1:
-                            if(equipos.get(equipo).getPlayers().get(jugador) instanceof Guardian){
-                                
-                                ((Guardian)equipos.get(equipo).getPlayers().get(jugador)).ataque(((Cazador)equipos.get(equiRandom).getPlayers().get(4)).velocidadCazador());
-                               
+                            if (equipos.get(equipo).getPlayers().get(jugador) instanceof Guardian) {
+
+                                ((Guardian) equipos.get(equipo).getPlayers().get(jugador)).ataque(((Cazador) equipos.get(equiRandom).getPlayers().get(4)).velocidadCazador());
+
                             }
                             break;
                         case 2:
@@ -719,7 +842,6 @@ public class Lab4_PaulinaEuceda_JudaPonc {
 
             }
         }
-        
 
     }
 

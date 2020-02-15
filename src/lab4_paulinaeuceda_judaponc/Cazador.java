@@ -11,7 +11,7 @@ public class Cazador extends Jugadores {
     
     
 
-    public Cazador(int peso, int reflejo, String nombre, String anio, String casa, int numUniforme) {
+    public Cazador(int peso, int reflejo, String nombre, String anio, String casa, int numUniforme) throws Exception {
         super(nombre, anio, casa, numUniforme);
         this.peso = peso;
         this.reflejo = reflejo;
