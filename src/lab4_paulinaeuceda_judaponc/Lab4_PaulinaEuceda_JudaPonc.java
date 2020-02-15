@@ -322,6 +322,7 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                     }
                                     if (cont >= 2) {
                                         disponible = false;
+                                        jugadores.remove(pos);
                                     }
                                 }
 
