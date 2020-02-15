@@ -776,7 +776,7 @@ public class Lab4_PaulinaEuceda_JudaPonc {
 
                     break;
                 case 3: //simulacion
-                   // Simular();
+                    Simular();
                     break;
                 case 4: //salir
                     salida = 'n';
@@ -787,5 +787,9 @@ public class Lab4_PaulinaEuceda_JudaPonc {
             }//fin switch1
         }//fin while salida
     }//fin main
+
+
+  
+
 
 }
