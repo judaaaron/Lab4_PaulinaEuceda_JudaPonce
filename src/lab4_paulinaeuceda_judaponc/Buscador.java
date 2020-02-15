@@ -9,7 +9,7 @@ public class Buscador extends Jugadores {
     public Buscador() {
     }
 
-    public Buscador(int pesoBuscador, String nombre, String anio, String casa, int numUniforme) {
+    public Buscador(int pesoBuscador, String nombre, String anio, String casa, int numUniforme){
         super(nombre, anio, casa, numUniforme);
         this.pesoBuscador = pesoBuscador;
     }
