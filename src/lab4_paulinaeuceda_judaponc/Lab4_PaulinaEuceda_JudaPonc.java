@@ -220,7 +220,7 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                         case 5:// agregar jugador
 
                             if (equipos.isEmpty()) {
-                                System.out.println(" No hay jugadores equipos hasta el momento");
+                                System.out.println(" No hay jugadores registrados hasta el momento");
                                 System.out.println();
                                 break;
 
@@ -790,29 +790,29 @@ public class Lab4_PaulinaEuceda_JudaPonc {
 
     static public void Simular() throws Exception {
         try {
+            for (int i = 0; i < jugadores.size(); i++) {
+                if (jugadores.get(i) instanceof Cazador) {
+
+                }
+
+            }
+            boolean fin = false;
+            for (int i = 0; i < equipos.size(); i++) {
+                System.out.println(i + ") " + equipos.get(i));
+            }
+            System.out.print("Ingrese el equipo que desea: ");
+            int equipo = lea.nextInt();
             boolean game = false;
-            for (int i = 0; i < equipos.get(i).getPlayers().size(); i++) {
-                if (equipos.get(i).getPlayers().size() == 6) {
+            for (int i = 0; i < equipos.get(equipo).getPlayers().size(); i++) {
+                if (equipos.get(equipo).getPlayers().size() == 6) {
                     game = true;
                 } else {
                     game = false;
                 }
+
             }
 
             if (game == true) {
-                for (int i = 0; i < jugadores.size(); i++) {
-                    if (jugadores.get(i) instanceof Cazador) {
-
-                    }
-
-                }
-                boolean fin = false;
-                for (int i = 0; i < equipos.size(); i++) {
-                    System.out.println(i + ") " + equipos.get(i));
-                }
-                System.out.print("Ingrese el equipo que desea: ");
-                int equipo = lea.nextInt();
-
                 int equiRandom = 0 + ran.nextInt(equipos.size() - 1);
                 while (equiRandom == equipo) {
                     equiRandom = 0 + ran.nextInt(equipos.size() - 1);
@@ -900,8 +900,11 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                 }
 
             } else {
-                System.out.println(" El equipo no cumple con jugadores necesarios para jugar");
+                System.out.println(" El equipo ni cuenta con jugadores necesarios para jugar");
+                System.out.println();
+
             }
+
         } catch (Exception e) {
             System.out.println(e);
         }
