@@ -30,7 +30,7 @@ public class Lab4_PaulinaEuceda_JudaPonc {
         equipos.get(1).getPlayers().add(new Cazador(134, 9, "Felipe", "Septimo", "Slytherin", 14));
         equipos.get(1).getPlayers().add(new Cazador(120, 10, "Ian", "Cuarto", "Slytherin", 16));
         equipos.get(1).getPlayers().add(new Buscador(121, "Miguel", "Quinto", "Slytherin", 19));
-
+        
         char salida = 's';
         boolean equipoCreado = false;
         while (salida == 's') {
@@ -81,6 +81,7 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                     break;
                                 default:
                                     System.out.println("Opcion incorrecta");
+                                    System.out.println();
                                     break;
                             }//fin menu casa
 
@@ -118,56 +119,44 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                 }
 
                             }
-                            System.out.println(" 1. modifcar casa");
-                            System.out.println(" 2. agregar jugadores");
-                            System.out.println(" Seleccione opcion");
-                            int opi = lea.nextInt();
-                            switch (opi) {
-                                case 1:
 
-                                    if (value == false) {
-                                        String newCasa = "";
-                                        System.out.println(" Ingrese un nueva casa: ");
-                                        System.out.println("1) Gryffindor");
-                                        System.out.println("2) Slytherin");
-                                        System.out.println("3) Ravenclaw");
-                                        System.out.println("4) Hufflepuff");
-                                        int opciones = lea.nextInt();
-                                        switch (opciones) {
-                                            case 1:
-                                                newCasa = "Gryffindor";
-                                                break;
+                            if (value == false) {
+                                String newCasa = "";
+                                System.out.println(" Ingrese un nueva casa: ");
+                                System.out.println("1) Gryffindor");
+                                System.out.println("2) Slytherin");
+                                System.out.println("3) Ravenclaw");
+                                System.out.println("4) Hufflepuff");
+                                int opciones = lea.nextInt();
+                                switch (opciones) {
+                                    case 1:
+                                        newCasa = "Gryffindor";
+                                        break;
 
-                                            case 2:
-                                                newCasa = "Slytherin";
-                                                break;
+                                    case 2:
+                                        newCasa = "Slytherin";
+                                        break;
 
-                                            case 3:
-                                                newCasa = "Ravenclaw";
-                                                break;
+                                    case 3:
+                                        newCasa = "Ravenclaw";
+                                        break;
 
-                                            case 4:
-                                                newCasa = "Hufflepuff";
-                                                break;
-                                            default:
-                                                System.out.println(" Opcion incorrecta");
-                                                System.out.println("");
-                                        }
+                                    case 4:
+                                        newCasa = "Hufflepuff";
+                                        break;
+                                    default:
+                                        System.out.println(" Opcion incorrecta");
+                                        System.out.println("");
+                                }
 
-                                        equipos.get(posi).setCasa(newCasa);
-                                        System.out.println(" Casa del equipo ha modificada con exito");
-                                        System.out.println();
+                                equipos.get(posi).setCasa(newCasa);
+                                System.out.println(" Casa del equipo ha modificada con exito");
+                                System.out.println();
 
-                                    } else {
-                                        System.out.println(" Error!!! Posicion seleccionada no existe");
-                                        System.out.println();
+                            } else {
+                                System.out.println(" Error!!! Posicion seleccionada no existe");
+                                System.out.println();
 
-                                    }
-
-                                    break;
-
-                                default:
-                                    throw new AssertionError();
                             }
 
                             break;
@@ -466,7 +455,21 @@ public class Lab4_PaulinaEuceda_JudaPonc {
 
                             System.out.print("Ingrese el numero de uniforme: ");
                             numUniforme = lea.nextInt();
+                            boolean nume = false;
+                            for (int i = 0; i < jugadores.size(); i++) {
 
+                                while (numUniforme == jugadores.get(i).getNumUniforme()) {
+                                    nume = true;
+                                }
+
+                            }
+
+                            if (nume == true) {
+                                System.out.println(" Los numeros de uniforme deben ser distinos");
+                                System.out.println(" Ingrese nuevo");
+                                numUniforme = lea.nextInt();
+
+                            }
                             resp = 's';
                             while (resp == 's') {
                                 System.out.println("1) Guardian");
@@ -510,6 +513,7 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                         resp = 'n';
 
                                         break;
+
                                     case 3:
                                         System.out.print("Ingrese el peso: ");
                                         peso = lea.nextInt();
@@ -768,9 +772,13 @@ public class Lab4_PaulinaEuceda_JudaPonc {
         }//fin while salida
     }//fin main
 
-    static public void Simular() {
-        int n = 0;
+    
+    static public void Simular() throws Exception {
+        try {
 
+        } catch (Exception e) {
+            System.out.println(e);
+        }
         for (int i = 0; i < jugadores.size(); i++) {
             if (jugadores.get(i) instanceof Cazador) {
 
@@ -816,7 +824,6 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                             if (equipos.get(equipo).getPlayers().get(jugador) instanceof Guardian) {
                                 int cazador = 3 + ran.nextInt(3);
                                 if (((Guardian) equipos.get(equipo).getPlayers().get(jugador)).ataque(((Cazador) equipos.get(equiRandom).getPlayers().get(cazador)).velocidadCazador()) == true) {
-                                    n += 8;
                                 }
 
                             }
