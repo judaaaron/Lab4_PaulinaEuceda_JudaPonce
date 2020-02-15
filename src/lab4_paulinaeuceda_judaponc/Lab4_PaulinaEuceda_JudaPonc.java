@@ -471,21 +471,8 @@ public class Lab4_PaulinaEuceda_JudaPonc {
 
                             System.out.print("Ingrese el numero de uniforme: ");
                             numUniforme = lea.nextInt();
-                            boolean nume = false;
-                            for (int i = 0; i < jugadores.size(); i++) {
-
-                                while (numUniforme == jugadores.get(i).getNumUniforme()) {
-                                    nume = true;
-                                }
-
-                            }
-
-                            if (nume == true) {
-                                System.out.println(" Los numeros de uniforme deben ser distinos");
-                                System.out.println(" Ingrese nuevo");
-                                numUniforme = lea.nextInt();
-
-                            }
+                           
+                          
                             resp = 's';
                             while (resp == 's') {
                                 System.out.println("1) Guardian");
@@ -788,8 +775,192 @@ public class Lab4_PaulinaEuceda_JudaPonc {
         }//fin while salida
     }//fin main
 
+    static public void Simular() throws Exception {
+        
+        try {
+            
+        } catch (Exception e) {
+        }
 
-  
+        boolean fin = false;
+        for (int i = 0; i < equipos.size(); i++) {
+            System.out.println(i + ") " + equipos.get(i));
+        }
+        System.out.println("");
+        System.out.print("Ingrese el equipo que desea: ");
+        int equipo = lea.nextInt();
 
+        System.out.println("");
+        int equiRandom = 0 + ran.nextInt(equipos.size());
+        while (equiRandom == equipo) {
+            equiRandom = 0 + ran.nextInt(equipos.size());
+        }
+        System.out.println("La maquina eligió: " + equipos.get(equiRandom).getCasa());
+        System.out.println("");
+
+        int turno = 0;
+        while (fin == false) {
+            if (turno % 2 == 0) {
+
+                for (int i = 0; i < equipos.get(equipo).getPlayers().size(); i++) {
+                    System.out.println(i + ") " + equipos.get(equipo).getPlayers().get(i).getNombre());
+                }
+
+                System.out.print("Ingrese el jugador que desea: ");
+                int jugador = lea.nextInt();
+                System.out.println("");
+
+                System.out.println("1) Jugar Normal");
+                System.out.println("2) Trampa");
+                System.out.print("Ingrese modo de jugar: ");
+                int modo = lea.nextInt();
+                System.out.println("");
+                char resp = 's';
+                while (resp == 's') {
+                    resp = 'n';
+                    switch (modo) {
+                        case 1:
+                            if (equipos.get(equipo).getPlayers().get(jugador) instanceof Guardian) {
+                                int cazador = 3 + ran.nextInt(3);
+                                System.out.print(equipos.get(equipo).getPlayers().get(jugador).getNombre() + "(Guardian" + " - " + equipos.get(equipo).getPlayers().get(jugador).getCasa() + ") Intentó atajar un gol: ");
+                                ((Guardian) equipos.get(equipo).getPlayers().get(jugador)).ataque(((Cazador) equipos.get(equiRandom).getPlayers().get(cazador)).velocidadCazador());
+                                System.out.println("");
+                            }
+                            if (equipos.get(equipo).getPlayers().get(jugador) instanceof golpeador) {
+                                System.out.println("1) Atacar");
+                                System.out.println("2) Defender");
+                                System.out.print("Ingrese la opcion que desea: ");
+                                int elegir = lea.nextInt();
+                                System.out.println("");
+                                switch (elegir) {
+                                    case 1:
+                                        System.out.print(equipos.get(equipo).getPlayers().get(jugador).getNombre() + "(Golpeador - " + equipos.get(equipo).getPlayers().get(jugador).getCasa());
+                                        ((golpeador) equipos.get(equipo).getPlayers().get(jugador)).ataque(((golpeador) equipos.get(equiRandom).getPlayers().get(1)).fuerzaGolpeador() + ((golpeador) equipos.get(equiRandom).getPlayers().get(2)).fuerzaGolpeador());
+                                        System.out.println("");
+                                        break;
+                                    case 2:
+
+                                        break;
+                                    default:
+                                        System.out.println("No es correcto");
+                                        break;
+                                }
+                            }
+                            if (equipos.get(equipo).getPlayers().get(jugador) instanceof Cazador) {
+                                System.out.print(equipos.get(equipo).getPlayers().get(jugador).getNombre() + "(Cazador - " + equipos.get(equipo).getPlayers().get(jugador).getCasa());
+                                ((Cazador) equipos.get(equipo).getPlayers().get(jugador)).ataque(((Guardian) equipos.get(equiRandom).getPlayers().get(0)).agilidadGuardian());
+                                System.out.println("");
+                            }
+                            if (equipos.get(equipo).getPlayers().get(jugador) instanceof Buscador) {
+                                System.out.print(equipos.get(equipo).getPlayers().get(jugador).getNombre() + "(Buscador - " + equipos.get(equipo).getPlayers().get(jugador).getCasa());
+                                if (((Buscador) equipos.get(equipo).getPlayers().get(jugador)).ataque(((Buscador) equipos.get(equiRandom).getPlayers().get(6)).velocidadBuscador()) == true) {
+                                    fin = true;
+                                }
+                            }
+                            System.out.println("");
+
+                            break;
+
+                        case 2:
+
+                            break;
+                        default:
+                            System.out.println("Opcion equivocada");
+                            resp = 's';
+                            break;
+                    }
+                    turno++;
+
+                }
+            } else {
+                int maquina = 1 + ran.nextInt(2);
+                switch (maquina) {
+                    case 1:
+                        int jugMaquina = 0 + ran.nextInt(7);
+                        System.out.println("La maquina eligio a " + equipos.get(equiRandom).getPlayers().get(jugMaquina).getNombre());
+                        System.out.println("");
+
+                        if (equipos.get(equiRandom).getPlayers().get(jugMaquina) instanceof Guardian) {
+                            int pos = 0;
+                            for (int i = 0; i < equipos.get(equipo).getPlayers().size(); i++) {
+                                if (equipos.get(equipo).getPlayers().get(i) instanceof Cazador) {
+                                    pos = i;
+                                    break;
+                                }
+                            }
+                            System.out.println("");
+                            System.out.print(equipos.get(equiRandom).getPlayers().get(jugMaquina).getNombre() + "(Guardian - " + equipos.get(equiRandom).getPlayers().get(jugMaquina).getCasa());
+                            ((Guardian) equipos.get(equiRandom).getPlayers().get(jugMaquina)).ataque(((Cazador) equipos.get(equipo).getPlayers().get(pos)).velocidadCazador());
+                            System.out.println("");
+
+                        }
+                        if (equipos.get(equiRandom).getPlayers().get(jugMaquina) instanceof golpeador) {
+                            System.out.println("1) Atacar");
+                            System.out.println("2) Defender");
+                            System.out.print("Ingrese la opcion que desea: ");
+                            int ele = 1 + ran.nextInt(2);
+                            System.out.println("");
+                            switch (ele) {
+                                case 1://atacar
+                                    int pos = 0,
+                                     con = 0;
+                                    int pos2 = 0;
+
+                                    for (int i = 0; i < equipos.get(equipo).getPlayers().size(); i++) {
+                                        if (equipos.get(equipo).getPlayers().get(i) instanceof golpeador && con == 0) {
+                                            pos = i;
+                                            con++;
+                                        } else if (equipos.get(equipo).getPlayers().get(i) instanceof golpeador) {
+                                            pos2 = i;
+                                        }
+                                    }
+                                    System.out.println("");
+                                    ((golpeador) equipos.get(equiRandom).getPlayers().get(jugMaquina)).ataque(((golpeador) equipos.get(equipo).getPlayers().get(pos)).fuerzaGolpeador() + ((golpeador) equipos.get(equipo).getPlayers().get(pos2)).fuerzaGolpeador());
+                                    break;
+                                case 2://defender
+
+                                    break;
+                                default:
+                                    System.out.println("No es correcto");
+                                    break;
+                            }
+                        }
+                        if (equipos.get(equiRandom).getPlayers().get(jugMaquina) instanceof Cazador) {
+                            int pos = 0;
+                            for (int i = 0; i < equipos.get(equipo).getPlayers().size(); i++) {
+                                if (equipos.get(equipo).getPlayers().get(i) instanceof Guardian) {
+                                    pos = i;
+                                    break;
+                                }
+                            }
+                            ((Cazador) equipos.get(equiRandom).getPlayers().get(jugMaquina)).ataque(((Guardian) equipos.get(equipo).getPlayers().get(pos)).agilidadGuardian());
+
+                        }
+                        if (equipos.get(equiRandom).getPlayers().get(jugMaquina) instanceof Buscador) {
+                            int pos = 0;
+                            for (int i = 0; i < equipos.get(equipo).getPlayers().size(); i++) {
+                                if (equipos.get(equipo).getPlayers().get(i) instanceof Buscador) {
+                                    pos = i;
+                                    break;
+                                }
+                            }
+                            if (((Buscador) equipos.get(equiRandom).getPlayers().get(jugMaquina)).ataque(((Buscador) equipos.get(equipo).getPlayers().get(pos)).velocidadBuscador()) == true) {
+                                fin = true;
+                            }
+                        }
+
+                        break;
+                    case 2:
+                        System.out.println("Atacar");
+                        break;
+                    default:
+                        break;
+                }
+                turno++;
+            }
+
+        }
+
+    }
 
 }
