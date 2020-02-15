@@ -989,7 +989,8 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                 }
 
             } else {
-                System.out.println(" El equipo no cuenta con jugadores suficientes para juagr");
+                System.out.println(" El equipo no cuenta con jugadores suficientes para jugar");
+                System.out.println();
             }
 
         } catch (Exception e) {
