@@ -792,9 +792,9 @@ public class Lab4_PaulinaEuceda_JudaPonc {
         System.out.print("Ingrese el equipo que desea: ");
         int equipo = lea.nextInt();
 
-        int equiRandom = 0 + ran.nextInt(equipos.size() - 1);
+        int equiRandom = 0 + ran.nextInt(equipos.size());
         while (equiRandom == equipo) {
-            equiRandom = 0 + ran.nextInt(equipos.size() - 1);
+            equiRandom = 0 + ran.nextInt(equipos.size());
         }
         System.out.println("La maquina eligió: " + equipos.get(equiRandom).getCasa());
         System.out.println("");
@@ -816,6 +816,7 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                 System.out.println("2) Trampa");
                 System.out.print("Ingrese modo de jugar: ");
                 int modo = lea.nextInt();
+                System.out.println("");
                 char resp = 's';
                 while (resp == 's') {
                     resp = 'n';
@@ -823,8 +824,8 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                         case 1:
                             if (equipos.get(equipo).getPlayers().get(jugador) instanceof Guardian) {
                                 int cazador = 3 + ran.nextInt(3);
-                                if (((Guardian) equipos.get(equipo).getPlayers().get(jugador)).ataque(((Cazador) equipos.get(equiRandom).getPlayers().get(cazador)).velocidadCazador()) == true) {
-                                }
+                                ((Guardian) equipos.get(equipo).getPlayers().get(jugador)).ataque(((Cazador) equipos.get(equiRandom).getPlayers().get(cazador)).velocidadCazador());
+                                
 
                             }
                             if (equipos.get(equipo).getPlayers().get(jugador) instanceof golpeador) {
@@ -832,6 +833,7 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                 System.out.println("2) Defender");
                                 System.out.print("Ingrese la opcion que desea: ");
                                 int elegir = lea.nextInt();
+                                System.out.println("");
                                 switch (elegir) {
                                     case 1:
                                         ((golpeador) equipos.get(equipo).getPlayers().get(jugador)).ataque(((golpeador) equipos.get(equiRandom).getPlayers().get(1)).fuerzaGolpeador() + ((golpeador) equipos.get(equiRandom).getPlayers().get(2)).fuerzaGolpeador());
@@ -860,7 +862,8 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                             }
                             break;
                         case 2:
-
+                            
+                                
                             break;
                         default:
                             System.out.println("Opcion equivocada");
