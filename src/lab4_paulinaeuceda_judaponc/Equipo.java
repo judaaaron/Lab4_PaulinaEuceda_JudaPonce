@@ -15,6 +15,9 @@ public class Equipo {
         this.casa = casa;
         this.cantGanados = cantGanados;
         this.cantPerdidos = cantPerdidos;
+        if (players.size()!=7) {
+            
+        }
     }
 
     public String getCasa() {

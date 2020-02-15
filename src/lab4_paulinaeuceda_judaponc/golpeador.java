@@ -12,9 +12,8 @@ public class golpeador extends Jugadores {
         super(nombre, anio, casa, numUniforme);
         this.musculatura = musculatura;
         this.reflejos = reflejos;
-
     }
-
+    
     public int getMusculatura() {
         return musculatura;
     }
