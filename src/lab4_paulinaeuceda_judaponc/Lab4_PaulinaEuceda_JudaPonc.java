@@ -842,7 +842,7 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                 System.out.println("");
                                 switch (elegir) {
                                     case 1:
-                                        System.out.print(equipos.get(equipo).getPlayers().get(jugador).getNombre()+"(Golpeador - "+equipos.get(equipo).getPlayers().get(jugador).getCasa());
+                                        System.out.print(equipos.get(equipo).getPlayers().get(jugador).getNombre()+"(Golpeador - "+equipos.get(equipo).getPlayers().get(jugador).getCasa()+") Intentó atacar: ");
                                         ((golpeador) equipos.get(equipo).getPlayers().get(jugador)).ataque(((golpeador) equipos.get(equiRandom).getPlayers().get(1)).fuerzaGolpeador() + ((golpeador) equipos.get(equiRandom).getPlayers().get(2)).fuerzaGolpeador());
                                         System.out.println("");
                                         break;
@@ -855,12 +855,12 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                 }
                             }
                             if (equipos.get(equipo).getPlayers().get(jugador) instanceof Cazador) {
-                                System.out.print(equipos.get(equipo).getPlayers().get(jugador).getNombre()+"(Cazador - "+equipos.get(equipo).getPlayers().get(jugador).getCasa());
+                                System.out.print(equipos.get(equipo).getPlayers().get(jugador).getNombre()+"(Cazador - "+equipos.get(equipo).getPlayers().get(jugador).getCasa()+") Intentó anotar: ");
                                 ((Cazador) equipos.get(equipo).getPlayers().get(jugador)).ataque(((Guardian) equipos.get(equiRandom).getPlayers().get(0)).agilidadGuardian());
                                 System.out.println("");
                             }
                             if (equipos.get(equipo).getPlayers().get(jugador) instanceof Buscador) {
-                                System.out.print(equipos.get(equipo).getPlayers().get(jugador).getNombre()+"(Buscador - "+equipos.get(equipo).getPlayers().get(jugador).getCasa());
+                                System.out.print(equipos.get(equipo).getPlayers().get(jugador).getNombre()+"(Buscador - "+equipos.get(equipo).getPlayers().get(jugador).getCasa()+") Intentó atrapar la Snitch: ");
                                 if (((Buscador) equipos.get(equipo).getPlayers().get(jugador)).ataque(((Buscador) equipos.get(equiRandom).getPlayers().get(6)).velocidadBuscador()) == true) {
                                     fin = true;
                                 }
@@ -897,7 +897,7 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                 }
                             }
                             System.out.println("");
-                            System.out.print(equipos.get(equiRandom).getPlayers().get(jugMaquina).getNombre()+"(Guardian - "+equipos.get(equiRandom).getPlayers().get(jugMaquina).getCasa());
+                            System.out.print(equipos.get(equiRandom).getPlayers().get(jugMaquina).getNombre()+"(Guardian - "+equipos.get(equiRandom).getPlayers().get(jugMaquina).getCasa()+") Intentó atajar un gol: ");
                             ((Guardian) equipos.get(equiRandom).getPlayers().get(jugMaquina)).ataque(((Cazador) equipos.get(equipo).getPlayers().get(pos)).velocidadCazador());
                             System.out.println("");
 
@@ -922,7 +922,9 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                         }
                                     }
                                     System.out.println("");
+                                    System.out.print(equipos.get(equiRandom).getPlayers().get(jugMaquina).getNombre()+"(Golpeador - "+equipos.get(equiRandom).getPlayers().get(jugMaquina).getCasa()+") Intentó atacar: ");
                                     ((golpeador) equipos.get(equiRandom).getPlayers().get(jugMaquina)).ataque(((golpeador) equipos.get(equipo).getPlayers().get(pos)).fuerzaGolpeador() + ((golpeador) equipos.get(equipo).getPlayers().get(pos2)).fuerzaGolpeador());
+                                    System.out.println("");
                                     break;
                                 case 2://defender
 
@@ -940,8 +942,10 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                     break;
                                 }
                             }
+                            System.out.println("");
+                            System.out.print(equipos.get(equiRandom).getPlayers().get(jugMaquina).getNombre()+"(Cazador - "+equipos.get(equiRandom).getPlayers().get(jugMaquina).getCasa()+") Intentó anotar: ");
                             ((Cazador) equipos.get(equiRandom).getPlayers().get(jugMaquina)).ataque(((Guardian) equipos.get(equipo).getPlayers().get(pos)).agilidadGuardian());
-
+                            System.out.println("");
                         }
                         if (equipos.get(equiRandom).getPlayers().get(jugMaquina) instanceof Buscador) {
                             int pos=0;
@@ -951,9 +955,11 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                     break;
                                 }
                             }
+                            System.out.print(equipos.get(equiRandom).getPlayers().get(jugMaquina).getNombre()+"(Buscador - "+equipos.get(equiRandom).getPlayers().get(jugMaquina).getCasa()+") Intentó atrapar la Snitch: ");
                             if (((Buscador) equipos.get(equiRandom).getPlayers().get(jugMaquina)).ataque(((Buscador) equipos.get(equipo).getPlayers().get(pos)).velocidadBuscador()) == true) {
                                 fin = true;
                             }
+                            System.out.println("");
                         }
 
                         break;
