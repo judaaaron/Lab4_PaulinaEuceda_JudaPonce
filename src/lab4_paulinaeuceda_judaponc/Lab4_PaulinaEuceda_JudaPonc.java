@@ -791,27 +791,32 @@ public class Lab4_PaulinaEuceda_JudaPonc {
     static public void Simular() throws Exception {
 
         boolean fin = false;
+        for (int i = 0; i < equipos.size(); i++) {
+            System.out.println(i + ") " + equipos.get(i));
+        }
+        System.out.println("");
+        System.out.print("Ingrese el equipo que desea: ");
+        int equipo = lea.nextInt();
+
+        System.out.println("");
+        int equiRandom = 0 + ran.nextInt(equipos.size());
+        while (equiRandom == equipo) {
+            equiRandom = 0 + ran.nextInt(equipos.size());
+        }
+        System.out.println("La maquina eligió: " + equipos.get(equiRandom).getCasa());
+        System.out.println("");
+        
         int turno = 0;
         while (fin == false) {
             if (turno % 2 == 0) {
-                for (int i = 0; i < equipos.size(); i++) {
-                    System.out.println(i + ") " + equipos.get(i));
-                }
-                System.out.println("");
-                System.out.print("Ingrese el equipo que desea: ");
-                int equipo = lea.nextInt();
 
-                System.out.println("");
-                int equiRandom = 0 + ran.nextInt(equipos.size() - 1);
-                while (equiRandom == equipo) {
-                    equiRandom = 0 + ran.nextInt(equipos.size() - 1);
+                for (int i = 0; i < equipos.get(equipo).getPlayers().size(); i++) {
+                    System.out.println(i + ") " + equipos.get(equipo).getPlayers().get(i).getNombre());
                 }
-                System.out.println("La maquina eligió: " + equipos.get(equiRandom).getCasa());
-                System.out.println("");
 
                 System.out.print("Ingrese el jugador que desea: ");
                 int jugador = lea.nextInt();
-                System.out.println(equipos.get(equipo).getPlayers().get(jugador));
+                System.out.println("");
 
                 System.out.println("1) Jugar Normal");
                 System.out.println("2) Trampa");
