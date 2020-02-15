@@ -13,23 +13,23 @@ public class Lab4_PaulinaEuceda_JudaPonc {
     static ArrayList<Equipo> equipos = new ArrayList();
 
     public static void main(String[] args) throws Exception {
-        equipos.add(new Equipo("Gryffindor", 0, 0));
-        equipos.add(new Equipo("Slytherin", 0, 0));
-        equipos.get(0).getPlayers().add(new Guardian(5, "Marc", "Tercer", "Gryffindor", 12));
-        equipos.get(0).getPlayers().add(new golpeador(14, 6, "Pablo", "Quinto", "Gryffindor", 2));
-        equipos.get(0).getPlayers().add(new golpeador(6, 3, "Marcos", "Segundo", "Gryffindor", 6));
-        equipos.get(0).getPlayers().add(new Cazador(188, 14, "Sebas", "Sexto", "Gryffindor", 11));
-        equipos.get(0).getPlayers().add(new Cazador(123, 7, "Yuda", "Septimo", "Gryffindor", 14));
-        equipos.get(0).getPlayers().add(new Cazador(126, 9, "Diego", "Cuarto", "Gryffindor", 16));
-        equipos.get(0).getPlayers().add(new Buscador(120, "Vargas", "Quinto", "Gryffindor", 19));
-
-        equipos.get(1).getPlayers().add(new Guardian(7, "Sergio", "Tercer", "Slytherin", 12));
-        equipos.get(1).getPlayers().add(new golpeador(15, 6, "David", "Quinto", "Slytherin", 2));
-        equipos.get(1).getPlayers().add(new golpeador(5, 5, "Jhon", "Segundo", "Slytherin", 6));
-        equipos.get(1).getPlayers().add(new Cazador(170, 12, "Camilo", "Sexto", "Slytherin", 11));
-        equipos.get(1).getPlayers().add(new Cazador(134, 9, "Felipe", "Septimo", "Slytherin", 14));
-        equipos.get(1).getPlayers().add(new Cazador(120, 10, "Ian", "Cuarto", "Slytherin", 16));
-        equipos.get(1).getPlayers().add(new Buscador(121, "Miguel", "Quinto", "Slytherin", 19));
+//        equipos.add(new Equipo("Gryffindor", 0, 0));
+//        equipos.add(new Equipo("Slytherin", 0, 0));
+//        equipos.get(0).getPlayers().add(new Guardian(5, "Marc", "Tercer", "Gryffindor", 12));
+//        equipos.get(0).getPlayers().add(new golpeador(14, 6, "Pablo", "Quinto", "Gryffindor", 2));
+//        equipos.get(0).getPlayers().add(new golpeador(6, 3, "Marcos", "Segundo", "Gryffindor", 6));
+//        equipos.get(0).getPlayers().add(new Cazador(188, 14, "Sebas", "Sexto", "Gryffindor", 11));
+//        equipos.get(0).getPlayers().add(new Cazador(123, 7, "Yuda", "Septimo", "Gryffindor", 14));
+//        equipos.get(0).getPlayers().add(new Cazador(126, 9, "Diego", "Cuarto", "Gryffindor", 16));
+//        equipos.get(0).getPlayers().add(new Buscador(120, "Vargas", "Quinto", "Gryffindor", 19));
+//
+//        equipos.get(1).getPlayers().add(new Guardian(7, "Sergio", "Tercer", "Slytherin", 12));
+//        equipos.get(1).getPlayers().add(new golpeador(15, 6, "David", "Quinto", "Slytherin", 2));
+//        equipos.get(1).getPlayers().add(new golpeador(5, 5, "Jhon", "Segundo", "Slytherin", 6));
+//        equipos.get(1).getPlayers().add(new Cazador(170, 12, "Camilo", "Sexto", "Slytherin", 11));
+//        equipos.get(1).getPlayers().add(new Cazador(134, 9, "Felipe", "Septimo", "Slytherin", 14));
+//        equipos.get(1).getPlayers().add(new Cazador(120, 10, "Ian", "Cuarto", "Slytherin", 16));
+//        equipos.get(1).getPlayers().add(new Buscador(121, "Miguel", "Quinto", "Slytherin", 19));
 
         char salida = 's';
         boolean equipoCreado = false;
@@ -214,6 +214,7 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                                 salidas += " [" + equipos.indexOf(o) + "] " + o + "\n";
 
                             }
+                            System.out.println("");
                             System.out.println(salidas);
 
                             break;
