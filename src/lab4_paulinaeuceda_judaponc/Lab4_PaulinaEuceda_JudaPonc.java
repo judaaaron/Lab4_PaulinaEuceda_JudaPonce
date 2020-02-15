@@ -278,62 +278,60 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                             if (play == false) {
                                 boolean disponible = true;
                                 int cont = 0;
-                                
-                                    if (jugadores.get(pos) instanceof Guardian) {
-                                        for (int j = 0; j < equipos.get(posii).getPlayers().size(); j++) {
-                                            if (equipos.get(posii).getPlayers().get(j) instanceof Guardian) {
-                                                cont++;
-                                                jugadores.remove(pos);
-                                            }
 
-                                        }
-                                        if (cont >= 1) {
-                                            disponible = false;
-                                        }
-                                    } else if (jugadores.get(pos) instanceof Cazador) {
-                                        for (int j = 0; j < equipos.get(posii).getPlayers().size(); j++) {
-                                            if (equipos.get(posii).getPlayers().get(j) instanceof Cazador) {
-                                                cont++;
-                                                 jugadores.remove(pos);
-                                            }
-
-                                        }
-                                        if (cont >= 3) {
-                                            disponible = false;
+                                if (jugadores.get(pos) instanceof Guardian) {
+                                    for (int j = 0; j < equipos.get(posii).getPlayers().size(); j++) {
+                                        if (equipos.get(posii).getPlayers().get(j) instanceof Guardian) {
+                                            cont++;
+                                            jugadores.remove(pos);
                                         }
 
-                                    } else if (jugadores.get(pos) instanceof Buscador) {
-                                        for (int j = 0; j < equipos.get(posii).getPlayers().size(); j++) {
-                                            if (equipos.get(posii).getPlayers().get(j) instanceof Buscador) {
-                                                cont++;
-                                                 jugadores.remove(pos);
-                                            }
+                                    }
+                                    if (cont >= 1) {
+                                        disponible = false;
+                                    }
+                                } else if (jugadores.get(pos) instanceof Cazador) {
+                                    for (int j = 0; j < equipos.get(posii).getPlayers().size(); j++) {
+                                        if (equipos.get(posii).getPlayers().get(j) instanceof Cazador) {
+                                            cont++;
+                                            jugadores.remove(pos);
+                                        }
 
-                                        }
-                                        if (cont >= 1) {
-                                            disponible = false;
-                                        }
-
-                                    } else if (jugadores.get(pos) instanceof golpeador) {
-                                        for (int j = 0; j < equipos.get(posii).getPlayers().size(); j++) {
-                                            if (equipos.get(posii).getPlayers().get(j) instanceof golpeador) {
-                                                cont++;
-                                                 jugadores.remove(pos);
-                                            }
-
-                                        }
-                                        if (cont >= 2) {
-                                            disponible = false;
-                                        }
+                                    }
+                                    if (cont >= 3) {
+                                        disponible = false;
                                     }
 
-                                
+                                } else if (jugadores.get(pos) instanceof Buscador) {
+                                    for (int j = 0; j < equipos.get(posii).getPlayers().size(); j++) {
+                                        if (equipos.get(posii).getPlayers().get(j) instanceof Buscador) {
+                                            cont++;
+                                            jugadores.remove(pos);
+                                        }
+
+                                    }
+                                    if (cont >= 1) {
+                                        disponible = false;
+                                    }
+
+                                } else if (jugadores.get(pos) instanceof golpeador) {
+                                    for (int j = 0; j < equipos.get(posii).getPlayers().size(); j++) {
+                                        if (equipos.get(posii).getPlayers().get(j) instanceof golpeador) {
+                                            cont++;
+
+                                        }
+
+                                    }
+                                    if (cont >= 2) {
+                                        disponible = false;
+                                    }
+                                }
 
                                 if (disponible == true) {
                                     equipos.get(posii).getPlayers().add(jugadores.get(pos));
-
+                                    jugadores.remove(pos);
                                 } else {
-                                    System.out.println(" Ya hay sufientens jugadores en el equipo en su posicion");
+                                    System.out.println(" Ya hay sufientens jugadores en el equipo en esta posicion");
                                 }
 
                             }
