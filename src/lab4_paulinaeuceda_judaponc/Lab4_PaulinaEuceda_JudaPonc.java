@@ -218,7 +218,16 @@ public class Lab4_PaulinaEuceda_JudaPonc {
 
                             break;
                         case 5:// agregar jugador
+                            
+                             if (equipos.isEmpty()) {
+                                System.out.println(" No hay jugadores equipos hasta el momento");
+                                System.out.println();
+                                break;
+
+                            }
                             salidas = "";
+                            
+                            System.out.println(" Listado de equipos");
                             for (Object o : equipos) {
 
                                 salidas += " [" + equipos.indexOf(o) + "] " + o + "\n";
@@ -234,6 +243,13 @@ public class Lab4_PaulinaEuceda_JudaPonc {
                             System.out.println("");
                             System.out.println();
                             String end = "";
+                            
+                            if (jugadores.isEmpty()) {
+                                System.out.println(" No hay jugadores registrados hasta el momento");
+                                System.out.println();
+                                break;
+
+                            }
 
                             System.out.println(" Listado de jugadores");
                             for (Object o : jugadores) {
